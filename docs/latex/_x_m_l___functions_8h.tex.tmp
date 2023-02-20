@@ -1,0 +1,125 @@
+\hypertarget{_x_m_l___functions_8h}{}\doxysection{/home/mrognor/\+Desktop/\+X\+M\+L\+\_\+\+Parser/\+X\+M\+L\+\_\+\+Functions.h File Reference}
+\label{_x_m_l___functions_8h}\index{/home/mrognor/Desktop/XML\_Parser/XML\_Functions.h@{/home/mrognor/Desktop/XML\_Parser/XML\_Functions.h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_x_m_l___functions_8h_a237d7d5b643fdee35fbff58620c42da6}{Set\+Log\+Func}} (void($\ast$log\+Func\+Ptr)(std\+::string))
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{_x_m_l___functions_8h_aae1169232232fd3699b0faa4660633a0}{Split}} (const std\+::string \&string\+To\+Split, const std\+::string \&splitter\+String)
+\item 
+std\+::string \mbox{\hyperlink{_x_m_l___functions_8h_a80739c24df6e8a4419e7432b2ef8e19d}{Trim\+String}} (const std\+::string \&str, bool is\+From\+Left=true, bool is\+From\+Right=true)
+\item 
+bool \mbox{\hyperlink{_x_m_l___functions_8h_a1b23606c742e6ccf7cd8a7d13bb0de9d}{Check\+Tag\+And\+Param\+Name}} (const std\+::string \&tag\+String)
+\item 
+bool \mbox{\hyperlink{_x_m_l___functions_8h_a0134c4bab5536362e1f263167d0e85da}{Check\+String}} (const std\+::string \&value\+String)
+\item 
+bool \mbox{\hyperlink{_x_m_l___functions_8h_a760be06732de5f06317aaa68cf9da538}{Parse\+Tag\+String}} (const std\+::string \&tag\+String, std\+::string \&tag\+Name, std\+::map$<$ std\+::string, std\+::string $>$ \&params\+And\+Values)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_x_m_l___functions_8h_a0134c4bab5536362e1f263167d0e85da}\label{_x_m_l___functions_8h_a0134c4bab5536362e1f263167d0e85da}} 
+\index{XML\_Functions.h@{XML\_Functions.h}!CheckString@{CheckString}}
+\index{CheckString@{CheckString}!XML\_Functions.h@{XML\_Functions.h}}
+\doxysubsubsection{\texorpdfstring{CheckString()}{CheckString()}}
+{\footnotesize\ttfamily bool Check\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value\+String }\end{DoxyParamCaption})}
+
+This function checks the parameter value or strings between tags for validity. If it is valid, it will return true, otherwise false
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value\+String} & string with parameter value or strings between tags\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return true if this string can be valid parameter value or strings between tags, return false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_x_m_l___functions_8h_a1b23606c742e6ccf7cd8a7d13bb0de9d}\label{_x_m_l___functions_8h_a1b23606c742e6ccf7cd8a7d13bb0de9d}} 
+\index{XML\_Functions.h@{XML\_Functions.h}!CheckTagAndParamName@{CheckTagAndParamName}}
+\index{CheckTagAndParamName@{CheckTagAndParamName}!XML\_Functions.h@{XML\_Functions.h}}
+\doxysubsubsection{\texorpdfstring{CheckTagAndParamName()}{CheckTagAndParamName()}}
+{\footnotesize\ttfamily bool Check\+Tag\+And\+Param\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag\+String }\end{DoxyParamCaption})}
+
+This function checks the tag name or the name of its parameter for validity. If it is valid, it will return true, otherwise false
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tag\+String} & string with tag name or tag parametr name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return true if this string can be valid tag name or parametr name, return false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_x_m_l___functions_8h_a760be06732de5f06317aaa68cf9da538}\label{_x_m_l___functions_8h_a760be06732de5f06317aaa68cf9da538}} 
+\index{XML\_Functions.h@{XML\_Functions.h}!ParseTagString@{ParseTagString}}
+\index{ParseTagString@{ParseTagString}!XML\_Functions.h@{XML\_Functions.h}}
+\doxysubsubsection{\texorpdfstring{ParseTagString()}{ParseTagString()}}
+{\footnotesize\ttfamily bool Parse\+Tag\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag\+String,  }\item[{std\+::string \&}]{tag\+Name,  }\item[{std\+::map$<$ std\+::string, std\+::string $>$ \&}]{params\+And\+Values }\end{DoxyParamCaption})}
+
+This function checks the tag string for validity. If it is valid, it will return true, otherwise false
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tag\+String} & string with tag \\
+\hline
+\mbox{\texttt{ out}}  & {\em tag\+Name} & string to put tag name if tag string valid \\
+\hline
+\mbox{\texttt{ out}}  & {\em params\+And\+Values} & map to put all params and values if tag string valid\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return true if this string can be valid tag, return false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_x_m_l___functions_8h_a237d7d5b643fdee35fbff58620c42da6}\label{_x_m_l___functions_8h_a237d7d5b643fdee35fbff58620c42da6}} 
+\index{XML\_Functions.h@{XML\_Functions.h}!SetLogFunc@{SetLogFunc}}
+\index{SetLogFunc@{SetLogFunc}!XML\_Functions.h@{XML\_Functions.h}}
+\doxysubsubsection{\texorpdfstring{SetLogFunc()}{SetLogFunc()}}
+{\footnotesize\ttfamily void Set\+Log\+Func (\begin{DoxyParamCaption}\item[{void($\ast$)(std\+::string)}]{log\+Func\+Ptr }\end{DoxyParamCaption})}
+
+Function for setting the logging function
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em log\+Func\+Ptr} & custom logging function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_x_m_l___functions_8h_aae1169232232fd3699b0faa4660633a0}\label{_x_m_l___functions_8h_aae1169232232fd3699b0faa4660633a0}} 
+\index{XML\_Functions.h@{XML\_Functions.h}!Split@{Split}}
+\index{Split@{Split}!XML\_Functions.h@{XML\_Functions.h}}
+\doxysubsubsection{\texorpdfstring{Split()}{Split()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Split (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{string\+To\+Split,  }\item[{const std\+::string \&}]{splitter\+String }\end{DoxyParamCaption})}
+
+Function to split a string using a splitter string
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em string\+To\+Split} & The string to be splitted \\
+\hline
+\mbox{\texttt{ in}}  & {\em splitter\+String} & The string that is used as a splitter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a vector of string consisting of parts of the string\+To\+Split 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_x_m_l___functions_8h_a80739c24df6e8a4419e7432b2ef8e19d}\label{_x_m_l___functions_8h_a80739c24df6e8a4419e7432b2ef8e19d}} 
+\index{XML\_Functions.h@{XML\_Functions.h}!TrimString@{TrimString}}
+\index{TrimString@{TrimString}!XML\_Functions.h@{XML\_Functions.h}}
+\doxysubsubsection{\texorpdfstring{TrimString()}{TrimString()}}
+{\footnotesize\ttfamily std\+::string Trim\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str,  }\item[{bool}]{is\+From\+Left = {\ttfamily true},  }\item[{bool}]{is\+From\+Right = {\ttfamily true} }\end{DoxyParamCaption})}
+
+This function delete all spaces and tabs from line beggining and ending
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & The string to trim \\
+\hline
+\mbox{\texttt{ in}}  & {\em is\+From\+Left} & The function will delete all spaces from left \\
+\hline
+\mbox{\texttt{ in}}  & {\em is\+From\+Right} & The function will delete all spaces from right\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a trimmed string 
+\end{DoxyReturn}
