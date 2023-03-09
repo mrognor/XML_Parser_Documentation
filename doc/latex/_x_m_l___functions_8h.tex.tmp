@@ -60,6 +60,10 @@ This function checks the parameter value or strings between tags for validity. I
 \begin{DoxyReturn}{Returns}
 Return true if this string can be valid parameter value or strings between tags, return false otherwise 
 \end{DoxyReturn}
+
+
+Definition at line 147 of file X\+M\+L\+\_\+\+Functions.\+cpp.
+
 \mbox{\Hypertarget{_x_m_l___functions_8cpp_aa94b7630bd1af2f7ccfbcd3ef43ad807}\label{_x_m_l___functions_8cpp_aa94b7630bd1af2f7ccfbcd3ef43ad807}} 
 \index{XML\_Functions.h@{XML\_Functions.h}!CheckTagOrParamName@{CheckTagOrParamName}}
 \index{CheckTagOrParamName@{CheckTagOrParamName}!XML\_Functions.h@{XML\_Functions.h}}
@@ -78,6 +82,10 @@ This function checks the tag name or the name of its parameter for validity. If 
 \begin{DoxyReturn}{Returns}
 Return true if this string can be valid tag name or parametr name, return false otherwise 
 \end{DoxyReturn}
+
+
+Definition at line 112 of file X\+M\+L\+\_\+\+Functions.\+cpp.
+
 \mbox{\Hypertarget{_x_m_l___functions_8h_a58c07021683c603adac0127dac738d41}\label{_x_m_l___functions_8h_a58c07021683c603adac0127dac738d41}} 
 \index{XML\_Functions.h@{XML\_Functions.h}!Count@{Count}}
 \index{Count@{Count}!XML\_Functions.h@{XML\_Functions.h}}
@@ -92,6 +100,10 @@ Template function for checking the number of occurrences of what in where.
 \begin{DoxyWarning}{Warning}
 The where object must be iterable, i.\+e. it must have the begin and end functions 
 \end{DoxyWarning}
+
+
+Definition at line 132 of file X\+M\+L\+\_\+\+Functions.\+h.
+
 \mbox{\Hypertarget{_x_m_l___functions_8cpp_ad452796d567eae1b5998f5db6797ff9d}\label{_x_m_l___functions_8cpp_ad452796d567eae1b5998f5db6797ff9d}} 
 \index{XML\_Functions.h@{XML\_Functions.h}!ParseTagString@{ParseTagString}}
 \index{ParseTagString@{ParseTagString}!XML\_Functions.h@{XML\_Functions.h}}
@@ -112,6 +124,10 @@ This function checks the tag string for validity. If it is valid, it will return
 \begin{DoxyReturn}{Returns}
 Return true if this string can be valid tag, return false otherwise 
 \end{DoxyReturn}
+
+
+Definition at line 211 of file X\+M\+L\+\_\+\+Functions.\+cpp.
+
 \mbox{\Hypertarget{_x_m_l___functions_8cpp_a3a456a85835826d0a606e1b9ec28ce33}\label{_x_m_l___functions_8cpp_a3a456a85835826d0a606e1b9ec28ce33}} 
 \index{XML\_Functions.h@{XML\_Functions.h}!SetLogFunc@{SetLogFunc}}
 \index{SetLogFunc@{SetLogFunc}!XML\_Functions.h@{XML\_Functions.h}}
@@ -125,6 +141,10 @@ Function for setting the logging function
 \mbox{\texttt{ in}}  & {\em log\+Func\+Ptr} & custom logging function \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 7 of file X\+M\+L\+\_\+\+Functions.\+cpp.
+
 \mbox{\Hypertarget{_x_m_l___functions_8cpp_ac416a5c95c9f040553dcc98c865cd903}\label{_x_m_l___functions_8cpp_ac416a5c95c9f040553dcc98c865cd903}} 
 \index{XML\_Functions.h@{XML\_Functions.h}!Split@{Split}}
 \index{Split@{Split}!XML\_Functions.h@{XML\_Functions.h}}
@@ -143,6 +163,10 @@ Function to split a string using a splitter string
 \begin{DoxyReturn}{Returns}
 Returns a vector of string consisting of parts of the string\+To\+Split 
 \end{DoxyReturn}
+
+
+Definition at line 52 of file X\+M\+L\+\_\+\+Functions.\+cpp.
+
 \mbox{\Hypertarget{_x_m_l___functions_8cpp_aec53c412e39445ac9218333b90d60f25}\label{_x_m_l___functions_8cpp_aec53c412e39445ac9218333b90d60f25}} 
 \index{XML\_Functions.h@{XML\_Functions.h}!TrimString@{TrimString}}
 \index{TrimString@{TrimString}!XML\_Functions.h@{XML\_Functions.h}}
@@ -163,6 +187,10 @@ This function delete all spaces and tabs from line beggining and ending
 \begin{DoxyReturn}{Returns}
 Returns a trimmed string 
 \end{DoxyReturn}
+
+
+Definition at line 87 of file X\+M\+L\+\_\+\+Functions.\+cpp.
+
 \mbox{\Hypertarget{_x_m_l___functions_8h_a619d4caef71a468a41aa539abd2492de}\label{_x_m_l___functions_8h_a619d4caef71a468a41aa539abd2492de}} 
 \index{XML\_Functions.h@{XML\_Functions.h}!Validate@{Validate}}
 \index{Validate@{Validate}!XML\_Functions.h@{XML\_Functions.h}}
@@ -186,3 +214,7 @@ The iterator must contain the std\+::string
 \mbox{\texttt{ in}}  & {\em is\+Path\+Saving} & boolean variable to indicate whether to save the data path in the list. It is necessary because saving the path requires a lot of additional memory, and determining the path during list processing is quite simple \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 152 of file X\+M\+L\+\_\+\+Functions.\+h.
+
