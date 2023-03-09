@@ -1,0 +1,54 @@
+\hypertarget{structxmlp_1_1_xml_data}{}\doxysection{xmlp\+::Xml\+Data Struct Reference}
+\label{structxmlp_1_1_xml_data}\index{xmlp::XmlData@{xmlp::XmlData}}
+
+
+Struct to store all required information about xml data ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$X\+M\+L\+\_\+\+Functions.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structxmlp_1_1_xml_data_abf44baef73bee9c56d6724aa3edc2514}\label{structxmlp_1_1_xml_data_abf44baef73bee9c56d6724aa3edc2514}} 
+{\bfseries Xml\+Data} (std\+::string data)
+\item 
+\mbox{\Hypertarget{structxmlp_1_1_xml_data_a36d158e5e29204f765c492c686f77cec}\label{structxmlp_1_1_xml_data_a36d158e5e29204f765c492c686f77cec}} 
+{\bfseries operator std\+::string} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structxmlp_1_1_xml_data_ae3025a30f6558750ad3f999c276054d8}\label{structxmlp_1_1_xml_data_ae3025a30f6558750ad3f999c276054d8}} 
+\mbox{\hyperlink{_x_m_l___functions_8h_a7dfdf690ac1440f989a5f1321770484e}{Xml\+Data\+Type}} \mbox{\hyperlink{structxmlp_1_1_xml_data_ae3025a30f6558750ad3f999c276054d8}{Data\+Type}}
+\begin{DoxyCompactList}\small\item\em Data type in the structure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structxmlp_1_1_xml_data_a8c41362e8654ae88ad4ceb13d5f358c2}\label{structxmlp_1_1_xml_data_a8c41362e8654ae88ad4ceb13d5f358c2}} 
+std\+::string \mbox{\hyperlink{structxmlp_1_1_xml_data_a8c41362e8654ae88ad4ceb13d5f358c2}{Path}}
+\begin{DoxyCompactList}\small\item\em Data path in xml data or file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structxmlp_1_1_xml_data_aa23093e0b838acbe1332ccdcaee4c21d}\label{structxmlp_1_1_xml_data_aa23093e0b838acbe1332ccdcaee4c21d}} 
+std\+::string \mbox{\hyperlink{structxmlp_1_1_xml_data_aa23093e0b838acbe1332ccdcaee4c21d}{Tag\+Name}}
+\begin{DoxyCompactList}\small\item\em The name of the tag. The string is empty if the data type is not a tag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structxmlp_1_1_xml_data_a5438946e30e91223bec7f99dcaac4c6c}\label{structxmlp_1_1_xml_data_a5438946e30e91223bec7f99dcaac4c6c}} 
+std\+::map$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{structxmlp_1_1_xml_data_a5438946e30e91223bec7f99dcaac4c6c}{Params\+And\+Values}}
+\begin{DoxyCompactList}\small\item\em Map with pairs of keys and values, where the key is the name of the tag parameter, and the value is the tag value. Map let if the data type is not equal to the opening tag or inline tag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structxmlp_1_1_xml_data_a42407bb4ec1896986bd0c8af4c02a7d6}\label{structxmlp_1_1_xml_data_a42407bb4ec1896986bd0c8af4c02a7d6}} 
+std\+::string \mbox{\hyperlink{structxmlp_1_1_xml_data_a42407bb4ec1896986bd0c8af4c02a7d6}{Data}}
+\begin{DoxyCompactList}\small\item\em Raw xml data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structxmlp_1_1_xml_data_aaec627067519a5db6fdcbbd15372687e}\label{structxmlp_1_1_xml_data_aaec627067519a5db6fdcbbd15372687e}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&out, const \mbox{\hyperlink{structxmlp_1_1_xml_data}{Xml\+Data}} \&data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct to store all required information about xml data ~\newline
+ 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/mrognor/\+Desktop/\+X\+M\+L\+\_\+\+Parser/\mbox{\hyperlink{_x_m_l___functions_8h}{X\+M\+L\+\_\+\+Functions.\+h}}\end{DoxyCompactItemize}

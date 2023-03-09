@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['parsetagstring_15',['ParseTagString',['../_x_m_l___functions_8h.html#a760be06732de5f06317aaa68cf9da538',1,'XML_Functions.cpp']]]
+  ['getdata_25',['GetData',['../classxmlp_1_1_xml_parser.html#a0e12e75330d4f099c4ff28a12bcc7869',1,'xmlp::XmlParser']]]
 ];

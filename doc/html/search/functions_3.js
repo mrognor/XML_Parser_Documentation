@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['trimstring_18',['TrimString',['../_x_m_l___functions_8h.html#a80739c24df6e8a4419e7432b2ef8e19d',1,'XML_Functions.cpp']]]
+  ['setpathsaving_27',['SetPathSaving',['../classxmlp_1_1_xml_parser.html#a8b9790a6456070167b3a675e87257a3e',1,'xmlp::XmlParser']]]
 ];

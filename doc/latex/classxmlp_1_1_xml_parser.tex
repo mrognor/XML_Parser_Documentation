@@ -1,0 +1,194 @@
+\hypertarget{classxmlp_1_1_xml_parser}{}\doxysection{xmlp\+::Xml\+Parser Class Reference}
+\label{classxmlp_1_1_xml_parser}\index{xmlp::XmlParser@{xmlp::XmlParser}}
+
+
+Simple xml parser.  
+
+
+
+
+{\ttfamily \#include $<$X\+M\+L\+\_\+\+Parser.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classxmlp_1_1_xml_parser_a0e12e75330d4f099c4ff28a12bcc7869}\label{classxmlp_1_1_xml_parser_a0e12e75330d4f099c4ff28a12bcc7869}} 
+std\+::list$<$ \mbox{\hyperlink{structxmlp_1_1_xml_data}{Xml\+Data}} $>$ \& \mbox{\hyperlink{classxmlp_1_1_xml_parser_a0e12e75330d4f099c4ff28a12bcc7869}{Get\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Return list with parsed xml data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classxmlp_1_1_xml_parser_a8b9790a6456070167b3a675e87257a3e}{Set\+Path\+Saving}} (bool is\+Path\+Saving)
+\begin{DoxyCompactList}\small\item\em This function is needed to set the path of each tag to be saved. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classxmlp_1_1_xml_parser_ad40f7c542fd773ab29176b2dc1efbf0d}{Validate\+File}} (const std\+::string \&file\+Name)
+\begin{DoxyCompactList}\small\item\em A function for checking a file containing xml information for validity. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classxmlp_1_1_xml_parser_ac6bfc814017d79b372cfb40ba75feff7}{Validate\+String}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em A function for checking a string containing xml information for validity. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classxmlp_1_1_xml_parser_af5ff7fe68c2cad9440634c143f20d6e0}{Validate\+Vector\+Of\+Strings}} (const std\+::vector$<$ std\+::string $>$ \&vector\+To\+Validate)
+\begin{DoxyCompactList}\small\item\em A function for checking a vector containing xml information for validity. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\bool \mbox{\hyperlink{classxmlp_1_1_xml_parser_ae8d516cdff5c4caff6c3b6c88d07eb84}{Validate\+Container\+With\+Strings}} (const T \&container\+To\+Validate)
+\begin{DoxyCompactList}\small\item\em A template function for checking a container containing xml information for validity. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classxmlp_1_1_xml_parser_a3456aad54096443dce609bfc00f04de1}{Insert\+Data}} (const std\+::list$<$ \mbox{\hyperlink{structxmlp_1_1_xml_data}{Xml\+Data}} $>$\+::iterator \&pos\+To\+Insert\+It, std\+::list$<$ std\+::string $>$ list\+To\+Insert)
+\begin{DoxyCompactList}\small\item\em Function for inserting data into a list with xml data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classxmlp_1_1_xml_parser_adbf5dc2e7b4c89015fa7b9384c20df43}{Insert\+Data}} (const std\+::list$<$ \mbox{\hyperlink{structxmlp_1_1_xml_data}{Xml\+Data}} $>$\+::iterator \&first\+Pos\+To\+Insert\+It, const std\+::list$<$ \mbox{\hyperlink{structxmlp_1_1_xml_data}{Xml\+Data}} $>$\+::iterator \&second\+Pos\+To\+Insert\+It, std\+::list$<$ std\+::string $>$ first\+List\+To\+Insert, std\+::list$<$ std\+::string $>$ second\+List\+To\+Insert)
+\begin{DoxyCompactList}\small\item\em Function for inserting data into a list with xml data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classxmlp_1_1_xml_parser_aca73b36a8d61eee27b3534072d124e51}{Write\+Data\+To\+File}} (std\+::string file\+Name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple xml parser. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classxmlp_1_1_xml_parser_adbf5dc2e7b4c89015fa7b9384c20df43}\label{classxmlp_1_1_xml_parser_adbf5dc2e7b4c89015fa7b9384c20df43}} 
+\index{xmlp::XmlParser@{xmlp::XmlParser}!InsertData@{InsertData}}
+\index{InsertData@{InsertData}!xmlp::XmlParser@{xmlp::XmlParser}}
+\doxysubsubsection{\texorpdfstring{InsertData()}{InsertData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool xmlp\+::\+Xml\+Parser\+::\+Insert\+Data (\begin{DoxyParamCaption}\item[{const std\+::list$<$ \mbox{\hyperlink{structxmlp_1_1_xml_data}{Xml\+Data}} $>$\+::iterator \&}]{first\+Pos\+To\+Insert\+It,  }\item[{const std\+::list$<$ \mbox{\hyperlink{structxmlp_1_1_xml_data}{Xml\+Data}} $>$\+::iterator \&}]{second\+Pos\+To\+Insert\+It,  }\item[{std\+::list$<$ std\+::string $>$}]{first\+List\+To\+Insert,  }\item[{std\+::list$<$ std\+::string $>$}]{second\+List\+To\+Insert }\end{DoxyParamCaption})}
+
+
+
+Function for inserting data into a list with xml data. 
+
+Inserts first list before the first iterator. Inserts second list before the second iterator If adding data failed, the list with xml information does not change This function completely copies the original list, then inserts your data there, then checks them for validity and, if successful, assigns the original list to the list with the added elements
+
+\begin{DoxyWarning}{Warning}
+In this function, a new list is created larger than the size of the original list, if your list is very large, then you may not have enough R\+AM, in such cases, insert data through the getter to the original list 
+
+To insert this symbols\+: (", \textquotesingle{}, $<$, $>$, \&) you have to use next strings\+: (", \textquotesingle{}, $<$, $>$, \&) Note that the function will not replace these sequences with their symbols
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em first\+Pos\+To\+Insert\+It} & the first iterator before which you need to insert first list \\
+\hline
+\mbox{\texttt{ in}}  & {\em second\+Pos\+To\+Insert\+It} & the second iterator before which you need to insert second list \\
+\hline
+\mbox{\texttt{ in}}  & {\em first\+List\+To\+Insert} & the first list with data to insert \\
+\hline
+\mbox{\texttt{ in}}  & {\em second\+List\+To\+Insert} & the second list with data to insert\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+will return true if the insertion was successful, otherwise it will return false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classxmlp_1_1_xml_parser_a3456aad54096443dce609bfc00f04de1}\label{classxmlp_1_1_xml_parser_a3456aad54096443dce609bfc00f04de1}} 
+\index{xmlp::XmlParser@{xmlp::XmlParser}!InsertData@{InsertData}}
+\index{InsertData@{InsertData}!xmlp::XmlParser@{xmlp::XmlParser}}
+\doxysubsubsection{\texorpdfstring{InsertData()}{InsertData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool xmlp\+::\+Xml\+Parser\+::\+Insert\+Data (\begin{DoxyParamCaption}\item[{const std\+::list$<$ \mbox{\hyperlink{structxmlp_1_1_xml_data}{Xml\+Data}} $>$\+::iterator \&}]{pos\+To\+Insert\+It,  }\item[{std\+::list$<$ std\+::string $>$}]{list\+To\+Insert }\end{DoxyParamCaption})}
+
+
+
+Function for inserting data into a list with xml data. 
+
+Inserts data before the iterator, just like in std If adding data failed, the list with xml information does not change
+
+\begin{DoxyWarning}{Warning}
+To insert this symbols\+: (", \textquotesingle{}, $<$, $>$, \&) you have to use next strings\+: (", \textquotesingle{}, $<$, $>$, \&) Note that the function will not replace these sequences with their symbols
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pos\+To\+Insert\+It} & the iterator before which you need to insert data into the list \\
+\hline
+\mbox{\texttt{ in}}  & {\em list\+To\+Insert} & the list with data to insert\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+will return true if the insertion was successful, otherwise it will return false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classxmlp_1_1_xml_parser_a8b9790a6456070167b3a675e87257a3e}\label{classxmlp_1_1_xml_parser_a8b9790a6456070167b3a675e87257a3e}} 
+\index{xmlp::XmlParser@{xmlp::XmlParser}!SetPathSaving@{SetPathSaving}}
+\index{SetPathSaving@{SetPathSaving}!xmlp::XmlParser@{xmlp::XmlParser}}
+\doxysubsubsection{\texorpdfstring{SetPathSaving()}{SetPathSaving()}}
+{\footnotesize\ttfamily void xmlp\+::\+Xml\+Parser\+::\+Set\+Path\+Saving (\begin{DoxyParamCaption}\item[{bool}]{is\+Path\+Saving }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This function is needed to set the path of each tag to be saved. 
+
+\begin{DoxyWarning}{Warning}
+Disabling the saving of the tag path is necessary to save space in R\+AM, since the path takes up more space than the tag name, storing the path spends a lot of memory. At the same time it is very easy to determine the path during tag processing 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classxmlp_1_1_xml_parser_ae8d516cdff5c4caff6c3b6c88d07eb84}\label{classxmlp_1_1_xml_parser_ae8d516cdff5c4caff6c3b6c88d07eb84}} 
+\index{xmlp::XmlParser@{xmlp::XmlParser}!ValidateContainerWithStrings@{ValidateContainerWithStrings}}
+\index{ValidateContainerWithStrings@{ValidateContainerWithStrings}!xmlp::XmlParser@{xmlp::XmlParser}}
+\doxysubsubsection{\texorpdfstring{ValidateContainerWithStrings()}{ValidateContainerWithStrings()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool xmlp\+::\+Xml\+Parser\+::\+Validate\+Container\+With\+Strings (\begin{DoxyParamCaption}\item[{const T \&}]{container\+To\+Validate }\end{DoxyParamCaption})}
+
+
+
+A template function for checking a container containing xml information for validity. 
+
+This function check the container for validity and if it is valid, it saves it to the list. If the data is invalid, the list will be empty.
+
+\begin{DoxyReturn}{Returns}
+Returns true if the xml data in container is valid, otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classxmlp_1_1_xml_parser_ad40f7c542fd773ab29176b2dc1efbf0d}\label{classxmlp_1_1_xml_parser_ad40f7c542fd773ab29176b2dc1efbf0d}} 
+\index{xmlp::XmlParser@{xmlp::XmlParser}!ValidateFile@{ValidateFile}}
+\index{ValidateFile@{ValidateFile}!xmlp::XmlParser@{xmlp::XmlParser}}
+\doxysubsubsection{\texorpdfstring{ValidateFile()}{ValidateFile()}}
+{\footnotesize\ttfamily bool xmlp\+::\+Xml\+Parser\+::\+Validate\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+A function for checking a file containing xml information for validity. 
+
+This function check the file for validity and if it is valid, it saves it to the list. If the data is invalid, the list will be empty.
+
+\begin{DoxyReturn}{Returns}
+Returns true if the xml data in file is valid, otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classxmlp_1_1_xml_parser_ac6bfc814017d79b372cfb40ba75feff7}\label{classxmlp_1_1_xml_parser_ac6bfc814017d79b372cfb40ba75feff7}} 
+\index{xmlp::XmlParser@{xmlp::XmlParser}!ValidateString@{ValidateString}}
+\index{ValidateString@{ValidateString}!xmlp::XmlParser@{xmlp::XmlParser}}
+\doxysubsubsection{\texorpdfstring{ValidateString()}{ValidateString()}}
+{\footnotesize\ttfamily bool xmlp\+::\+Xml\+Parser\+::\+Validate\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})}
+
+
+
+A function for checking a string containing xml information for validity. 
+
+This function check the string for validity and if it is valid, it saves it to the list. If the data is invalid, the list will be empty.
+
+\begin{DoxyReturn}{Returns}
+Returns true if the xml data in string is valid, otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classxmlp_1_1_xml_parser_af5ff7fe68c2cad9440634c143f20d6e0}\label{classxmlp_1_1_xml_parser_af5ff7fe68c2cad9440634c143f20d6e0}} 
+\index{xmlp::XmlParser@{xmlp::XmlParser}!ValidateVectorOfStrings@{ValidateVectorOfStrings}}
+\index{ValidateVectorOfStrings@{ValidateVectorOfStrings}!xmlp::XmlParser@{xmlp::XmlParser}}
+\doxysubsubsection{\texorpdfstring{ValidateVectorOfStrings()}{ValidateVectorOfStrings()}}
+{\footnotesize\ttfamily bool xmlp\+::\+Xml\+Parser\+::\+Validate\+Vector\+Of\+Strings (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{vector\+To\+Validate }\end{DoxyParamCaption})}
+
+
+
+A function for checking a vector containing xml information for validity. 
+
+This function check the vector for validity and if it is valid, it saves it to the list. If the data is invalid, the list will be empty.
+
+\begin{DoxyReturn}{Returns}
+Returns true if the xml data in vector is valid, otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classxmlp_1_1_xml_parser_aca73b36a8d61eee27b3534072d124e51}\label{classxmlp_1_1_xml_parser_aca73b36a8d61eee27b3534072d124e51}} 
+\index{xmlp::XmlParser@{xmlp::XmlParser}!WriteDataToFile@{WriteDataToFile}}
+\index{WriteDataToFile@{WriteDataToFile}!xmlp::XmlParser@{xmlp::XmlParser}}
+\doxysubsubsection{\texorpdfstring{WriteDataToFile()}{WriteDataToFile()}}
+{\footnotesize\ttfamily bool xmlp\+::\+Xml\+Parser\+::\+Write\+Data\+To\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})}
+
+Function to write data to file
+
+\begin{DoxyWarning}{Warning}
+This function fully rewrite file with own writing structure. That means that all tags will be at only one new line 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em file\+Name} & string with file name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+will return true if the write was successful, otherwise it will return false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mrognor/\+Desktop/\+X\+M\+L\+\_\+\+Parser/X\+M\+L\+\_\+\+Parser.\+h\item 
+/home/mrognor/\+Desktop/\+X\+M\+L\+\_\+\+Parser/X\+M\+L\+\_\+\+Parser.\+cpp\end{DoxyCompactItemize}

@@ -1,10 +1,11 @@
 var indexSectionsWithContent =
 {
-  0: "cprstx",
-  1: "x",
+  0: "cdgilpstvwx",
+  1: "lx",
   2: "x",
-  3: "cpst",
-  4: "r"
+  3: "cgisvw",
+  4: "dpt",
+  5: "x"
 };
 
 var indexSectionNames =
@@ -13,7 +14,8 @@ var indexSectionNames =
   1: "classes",
   2: "files",
   3: "functions",
-  4: "pages"
+  4: "variables",
+  5: "enums"
 };
 
 var indexSectionLabels =
@@ -22,6 +24,7 @@ var indexSectionLabels =
   1: "Classes",
   2: "Files",
   3: "Functions",
-  4: "Pages"
+  4: "Variables",
+  5: "Enumerations"
 };
 

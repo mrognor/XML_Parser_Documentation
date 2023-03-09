@@ -2,29 +2,53 @@
 \label{_x_m_l___functions_8h}\index{/home/mrognor/Desktop/XML\_Parser/XML\_Functions.h@{/home/mrognor/Desktop/XML\_Parser/XML\_Functions.h}}
 This graph shows which files directly or indirectly include this file\+:
 % FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structxmlp_1_1_xml_data}{xmlp\+::\+Xml\+Data}}
+\begin{DoxyCompactList}\small\item\em Struct to store all required information about xml data ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_x_m_l___functions_8h_a7dfdf690ac1440f989a5f1321770484e}\label{_x_m_l___functions_8h_a7dfdf690ac1440f989a5f1321770484e}} 
+enum \mbox{\hyperlink{_x_m_l___functions_8h_a7dfdf690ac1440f989a5f1321770484e}{xmlp\+::\+Xml\+Data\+Type}} \{ \newline
+{\bfseries empty} = -\/1, 
+{\bfseries opening\+Tag} = 0, 
+{\bfseries closing\+Tag} = 1, 
+{\bfseries inline\+Tag} = 2, 
+\newline
+{\bfseries text} = 3, 
+{\bfseries comment} = 4
+ \}
+\begin{DoxyCompactList}\small\item\em Struct to store xml data type inside list with xml data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{_x_m_l___functions_8h_a237d7d5b643fdee35fbff58620c42da6}{Set\+Log\+Func}} (void($\ast$log\+Func\+Ptr)(std\+::string))
+void {\bfseries xmlp\+::\+Set\+Log\+Func} (void($\ast$log\+Func\+Ptr)(std\+::string))
 \item 
-std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{_x_m_l___functions_8h_aae1169232232fd3699b0faa4660633a0}{Split}} (const std\+::string \&string\+To\+Split, const std\+::string \&splitter\+String)
+std\+::vector$<$ std\+::string $>$ {\bfseries xmlp\+::\+Split} (const std\+::string \&string\+To\+Split, const std\+::string \&splitter\+String)
 \item 
-std\+::string \mbox{\hyperlink{_x_m_l___functions_8h_a80739c24df6e8a4419e7432b2ef8e19d}{Trim\+String}} (const std\+::string \&str, bool is\+From\+Left=true, bool is\+From\+Right=true)
+std\+::string {\bfseries xmlp\+::\+Trim\+String} (const std\+::string \&str, bool is\+From\+Left, bool is\+From\+Right)
 \item 
-bool \mbox{\hyperlink{_x_m_l___functions_8h_a1b23606c742e6ccf7cd8a7d13bb0de9d}{Check\+Tag\+And\+Param\+Name}} (const std\+::string \&tag\+String)
+bool {\bfseries xmlp\+::\+Check\+Tag\+Or\+Param\+Name} (const std\+::string \&tag\+String, bool is\+Tag\+Name)
 \item 
-bool \mbox{\hyperlink{_x_m_l___functions_8h_a0134c4bab5536362e1f263167d0e85da}{Check\+String}} (const std\+::string \&value\+String)
+bool {\bfseries xmlp\+::\+Check\+String} (const std\+::string \&value\+String)
 \item 
-bool \mbox{\hyperlink{_x_m_l___functions_8h_a760be06732de5f06317aaa68cf9da538}{Parse\+Tag\+String}} (const std\+::string \&tag\+String, std\+::string \&tag\+Name, std\+::map$<$ std\+::string, std\+::string $>$ \&params\+And\+Values)
+bool {\bfseries xmlp\+::\+Parse\+Tag\+String} (const std\+::string \&tag\+String, std\+::string \&tag\+Name, std\+::map$<$ std\+::string, std\+::string $>$ \&params\+And\+Values)
+\item 
+{\footnotesize template$<$class T , class V $>$ }\\int \mbox{\hyperlink{_x_m_l___functions_8h_a58c07021683c603adac0127dac738d41}{xmlp\+::\+Count}} (T where, V what)
+\begin{DoxyCompactList}\small\item\em Template function for checking the number of occurrences of what in where. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\bool \mbox{\hyperlink{_x_m_l___functions_8h_a619d4caef71a468a41aa539abd2492de}{xmlp\+::\+Validate}} (T begin, T end, std\+::list$<$ Xml\+Data $>$ $\ast$list\+With\+All\+Data=nullptr, bool is\+Path\+Saving=true)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{_x_m_l___functions_8h_a0134c4bab5536362e1f263167d0e85da}\label{_x_m_l___functions_8h_a0134c4bab5536362e1f263167d0e85da}} 
+\mbox{\Hypertarget{_x_m_l___functions_8cpp_a2ad4f1f97f171c233649124b23f35879}\label{_x_m_l___functions_8cpp_a2ad4f1f97f171c233649124b23f35879}} 
 \index{XML\_Functions.h@{XML\_Functions.h}!CheckString@{CheckString}}
 \index{CheckString@{CheckString}!XML\_Functions.h@{XML\_Functions.h}}
 \doxysubsubsection{\texorpdfstring{CheckString()}{CheckString()}}
-{\footnotesize\ttfamily bool Check\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value\+String }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool xmlp\+::\+Check\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value\+String }\end{DoxyParamCaption})}
 
 This function checks the parameter value or strings between tags for validity. If it is valid, it will return true, otherwise false
 
@@ -36,27 +60,43 @@ This function checks the parameter value or strings between tags for validity. I
 \begin{DoxyReturn}{Returns}
 Return true if this string can be valid parameter value or strings between tags, return false otherwise 
 \end{DoxyReturn}
-\mbox{\Hypertarget{_x_m_l___functions_8h_a1b23606c742e6ccf7cd8a7d13bb0de9d}\label{_x_m_l___functions_8h_a1b23606c742e6ccf7cd8a7d13bb0de9d}} 
-\index{XML\_Functions.h@{XML\_Functions.h}!CheckTagAndParamName@{CheckTagAndParamName}}
-\index{CheckTagAndParamName@{CheckTagAndParamName}!XML\_Functions.h@{XML\_Functions.h}}
-\doxysubsubsection{\texorpdfstring{CheckTagAndParamName()}{CheckTagAndParamName()}}
-{\footnotesize\ttfamily bool Check\+Tag\+And\+Param\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag\+String }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{_x_m_l___functions_8cpp_aa94b7630bd1af2f7ccfbcd3ef43ad807}\label{_x_m_l___functions_8cpp_aa94b7630bd1af2f7ccfbcd3ef43ad807}} 
+\index{XML\_Functions.h@{XML\_Functions.h}!CheckTagOrParamName@{CheckTagOrParamName}}
+\index{CheckTagOrParamName@{CheckTagOrParamName}!XML\_Functions.h@{XML\_Functions.h}}
+\doxysubsubsection{\texorpdfstring{CheckTagOrParamName()}{CheckTagOrParamName()}}
+{\footnotesize\ttfamily bool xmlp\+::\+Check\+Tag\+Or\+Param\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag\+String,  }\item[{bool}]{is\+Tag\+Name }\end{DoxyParamCaption})}
 
 This function checks the tag name or the name of its parameter for validity. If it is valid, it will return true, otherwise false
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em tag\+String} & string with tag name or tag parametr name\\
+\mbox{\texttt{ in}}  & {\em tag\+String} & string with tag name or tag parametr name \\
+\hline
+\mbox{\texttt{ in}}  & {\em is\+Tag\+Name} & boolean variable to indicate that the tag or parameter name should be checked\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Return true if this string can be valid tag name or parametr name, return false otherwise 
 \end{DoxyReturn}
-\mbox{\Hypertarget{_x_m_l___functions_8h_a760be06732de5f06317aaa68cf9da538}\label{_x_m_l___functions_8h_a760be06732de5f06317aaa68cf9da538}} 
+\mbox{\Hypertarget{_x_m_l___functions_8h_a58c07021683c603adac0127dac738d41}\label{_x_m_l___functions_8h_a58c07021683c603adac0127dac738d41}} 
+\index{XML\_Functions.h@{XML\_Functions.h}!Count@{Count}}
+\index{Count@{Count}!XML\_Functions.h@{XML\_Functions.h}}
+\doxysubsubsection{\texorpdfstring{Count()}{Count()}}
+{\footnotesize\ttfamily template$<$class T , class V $>$ \\
+int xmlp\+::\+Count (\begin{DoxyParamCaption}\item[{T}]{where,  }\item[{V}]{what }\end{DoxyParamCaption})}
+
+
+
+Template function for checking the number of occurrences of what in where. 
+
+\begin{DoxyWarning}{Warning}
+The where object must be iterable, i.\+e. it must have the begin and end functions 
+\end{DoxyWarning}
+\mbox{\Hypertarget{_x_m_l___functions_8cpp_ad452796d567eae1b5998f5db6797ff9d}\label{_x_m_l___functions_8cpp_ad452796d567eae1b5998f5db6797ff9d}} 
 \index{XML\_Functions.h@{XML\_Functions.h}!ParseTagString@{ParseTagString}}
 \index{ParseTagString@{ParseTagString}!XML\_Functions.h@{XML\_Functions.h}}
 \doxysubsubsection{\texorpdfstring{ParseTagString()}{ParseTagString()}}
-{\footnotesize\ttfamily bool Parse\+Tag\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag\+String,  }\item[{std\+::string \&}]{tag\+Name,  }\item[{std\+::map$<$ std\+::string, std\+::string $>$ \&}]{params\+And\+Values }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool xmlp\+::\+Parse\+Tag\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag\+String,  }\item[{std\+::string \&}]{tag\+Name,  }\item[{std\+::map$<$ std\+::string, std\+::string $>$ \&}]{params\+And\+Values }\end{DoxyParamCaption})}
 
 This function checks the tag string for validity. If it is valid, it will return true, otherwise false
 
@@ -72,11 +112,11 @@ This function checks the tag string for validity. If it is valid, it will return
 \begin{DoxyReturn}{Returns}
 Return true if this string can be valid tag, return false otherwise 
 \end{DoxyReturn}
-\mbox{\Hypertarget{_x_m_l___functions_8h_a237d7d5b643fdee35fbff58620c42da6}\label{_x_m_l___functions_8h_a237d7d5b643fdee35fbff58620c42da6}} 
+\mbox{\Hypertarget{_x_m_l___functions_8cpp_a3a456a85835826d0a606e1b9ec28ce33}\label{_x_m_l___functions_8cpp_a3a456a85835826d0a606e1b9ec28ce33}} 
 \index{XML\_Functions.h@{XML\_Functions.h}!SetLogFunc@{SetLogFunc}}
 \index{SetLogFunc@{SetLogFunc}!XML\_Functions.h@{XML\_Functions.h}}
 \doxysubsubsection{\texorpdfstring{SetLogFunc()}{SetLogFunc()}}
-{\footnotesize\ttfamily void Set\+Log\+Func (\begin{DoxyParamCaption}\item[{void($\ast$)(std\+::string)}]{log\+Func\+Ptr }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void xmlp\+::\+Set\+Log\+Func (\begin{DoxyParamCaption}\item[{void($\ast$)(std\+::string)}]{log\+Func\+Ptr }\end{DoxyParamCaption})}
 
 Function for setting the logging function
 
@@ -85,11 +125,11 @@ Function for setting the logging function
 \mbox{\texttt{ in}}  & {\em log\+Func\+Ptr} & custom logging function \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{_x_m_l___functions_8h_aae1169232232fd3699b0faa4660633a0}\label{_x_m_l___functions_8h_aae1169232232fd3699b0faa4660633a0}} 
+\mbox{\Hypertarget{_x_m_l___functions_8cpp_ac416a5c95c9f040553dcc98c865cd903}\label{_x_m_l___functions_8cpp_ac416a5c95c9f040553dcc98c865cd903}} 
 \index{XML\_Functions.h@{XML\_Functions.h}!Split@{Split}}
 \index{Split@{Split}!XML\_Functions.h@{XML\_Functions.h}}
 \doxysubsubsection{\texorpdfstring{Split()}{Split()}}
-{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Split (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{string\+To\+Split,  }\item[{const std\+::string \&}]{splitter\+String }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ xmlp\+::\+Split (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{string\+To\+Split,  }\item[{const std\+::string \&}]{splitter\+String }\end{DoxyParamCaption})}
 
 Function to split a string using a splitter string
 
@@ -103,11 +143,11 @@ Function to split a string using a splitter string
 \begin{DoxyReturn}{Returns}
 Returns a vector of string consisting of parts of the string\+To\+Split 
 \end{DoxyReturn}
-\mbox{\Hypertarget{_x_m_l___functions_8h_a80739c24df6e8a4419e7432b2ef8e19d}\label{_x_m_l___functions_8h_a80739c24df6e8a4419e7432b2ef8e19d}} 
+\mbox{\Hypertarget{_x_m_l___functions_8cpp_aec53c412e39445ac9218333b90d60f25}\label{_x_m_l___functions_8cpp_aec53c412e39445ac9218333b90d60f25}} 
 \index{XML\_Functions.h@{XML\_Functions.h}!TrimString@{TrimString}}
 \index{TrimString@{TrimString}!XML\_Functions.h@{XML\_Functions.h}}
 \doxysubsubsection{\texorpdfstring{TrimString()}{TrimString()}}
-{\footnotesize\ttfamily std\+::string Trim\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str,  }\item[{bool}]{is\+From\+Left = {\ttfamily true},  }\item[{bool}]{is\+From\+Right = {\ttfamily true} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string xmlp\+::\+Trim\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str,  }\item[{bool}]{is\+From\+Left = {\ttfamily true},  }\item[{bool}]{is\+From\+Right = {\ttfamily true} }\end{DoxyParamCaption})}
 
 This function delete all spaces and tabs from line beggining and ending
 
@@ -123,3 +163,26 @@ This function delete all spaces and tabs from line beggining and ending
 \begin{DoxyReturn}{Returns}
 Returns a trimmed string 
 \end{DoxyReturn}
+\mbox{\Hypertarget{_x_m_l___functions_8h_a619d4caef71a468a41aa539abd2492de}\label{_x_m_l___functions_8h_a619d4caef71a468a41aa539abd2492de}} 
+\index{XML\_Functions.h@{XML\_Functions.h}!Validate@{Validate}}
+\index{Validate@{Validate}!XML\_Functions.h@{XML\_Functions.h}}
+\doxysubsubsection{\texorpdfstring{Validate()}{Validate()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool xmlp\+::\+Validate (\begin{DoxyParamCaption}\item[{T}]{begin,  }\item[{T}]{end,  }\item[{std\+::list$<$ \mbox{\hyperlink{structxmlp_1_1_xml_data}{Xml\+Data}} $>$ $\ast$}]{list\+With\+All\+Data = {\ttfamily nullptr},  }\item[{bool}]{is\+Path\+Saving = {\ttfamily true} }\end{DoxyParamCaption})}
+
+This function is needed to check the container with xml data for validity
+
+\begin{DoxyWarning}{Warning}
+The iterator must contain the std\+::string
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em begin} & container start \\
+\hline
+\mbox{\texttt{ in}}  & {\em end} & container end \\
+\hline
+\mbox{\texttt{ out}}  & {\em list\+With\+All\+Data} & list for storing all data in a container. By default, the variable is nullptr and no data is saved. \\
+\hline
+\mbox{\texttt{ in}}  & {\em is\+Path\+Saving} & boolean variable to indicate whether to save the data path in the list. It is necessary because saving the path requires a lot of additional memory, and determining the path during list processing is quite simple \\
+\hline
+\end{DoxyParams}
