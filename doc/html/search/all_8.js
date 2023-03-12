@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['validate_10',['Validate',['../_x_m_l___functions_8h.html#a619d4caef71a468a41aa539abd2492de',1,'xmlp']]],
-  ['validatecontainerwithstrings_11',['ValidateContainerWithStrings',['../classxmlp_1_1_xml_parser.html#ae8d516cdff5c4caff6c3b6c88d07eb84',1,'xmlp::XmlParser']]],
-  ['validatefile_12',['ValidateFile',['../classxmlp_1_1_xml_parser.html#ad40f7c542fd773ab29176b2dc1efbf0d',1,'xmlp::XmlParser']]],
-  ['validatestring_13',['ValidateString',['../classxmlp_1_1_xml_parser.html#ac6bfc814017d79b372cfb40ba75feff7',1,'xmlp::XmlParser']]],
-  ['validatevectorofstrings_14',['ValidateVectorOfStrings',['../classxmlp_1_1_xml_parser.html#af5ff7fe68c2cad9440634c143f20d6e0',1,'xmlp::XmlParser']]]
+  ['tagname_0',['TagName',['../structxmlp_1_1_xml_data.html#aa23093e0b838acbe1332ccdcaee4c21d',1,'xmlp::XmlData']]],
+  ['text_1',['text',['../namespacexmlp.html#a7dfdf690ac1440f989a5f1321770484ea175899900df9e9ae4c2f22b8b2066035',1,'xmlp']]],
+  ['trimstring_2',['TrimString',['../namespacexmlp.html#aec53c412e39445ac9218333b90d60f25',1,'xmlp']]]
 ];

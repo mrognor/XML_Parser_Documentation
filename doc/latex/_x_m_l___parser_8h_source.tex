@@ -1,0 +1,58 @@
+\hypertarget{_x_m_l___parser_8h_source}{}\doxysection{XML\+\_\+\+Parser.\+h}
+\label{_x_m_l___parser_8h_source}\index{C:/Users/timur/Desktop/XML\_Parser/XML\_Parser.h@{C:/Users/timur/Desktop/XML\_Parser/XML\_Parser.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <stack>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <iterator>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}XML\_Functions.h"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacexmlp}{xmlp}}}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{16     \textcolor{keyword}{class }\mbox{\hyperlink{classxmlp_1_1_xml_parser}{XmlParser}}}
+\DoxyCodeLine{17     \{}
+\DoxyCodeLine{18     \textcolor{keyword}{private}:}
+\DoxyCodeLine{19         \textcolor{comment}{// List with parsed xml data}}
+\DoxyCodeLine{20         std::list<XmlData> Data;}
+\DoxyCodeLine{21         \textcolor{comment}{// Bool variable to specify xml data path saving}}
+\DoxyCodeLine{22         \textcolor{keywordtype}{bool} IsPathSaving = \textcolor{keyword}{true};}
+\DoxyCodeLine{23     \textcolor{keyword}{public}:}
+\DoxyCodeLine{25         std::list<XmlData>\& \mbox{\hyperlink{classxmlp_1_1_xml_parser_a1af9d1ddeac610a2357ad900c5b32f86}{GetData}}() \{ \textcolor{keywordflow}{return} Data; \}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{35         \textcolor{keywordtype}{void} \mbox{\hyperlink{classxmlp_1_1_xml_parser_a8b9790a6456070167b3a675e87257a3e}{SetPathSaving}}(\textcolor{keywordtype}{bool} isPathSaving) \{ IsPathSaving = isPathSaving; \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{45         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classxmlp_1_1_xml_parser_ad40f7c542fd773ab29176b2dc1efbf0d}{ValidateFile}}(\textcolor{keyword}{const} std::string\& fileName);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{55         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classxmlp_1_1_xml_parser_ac6bfc814017d79b372cfb40ba75feff7}{ValidateString}}(\textcolor{keyword}{const} std::string\& str);}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{65         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classxmlp_1_1_xml_parser_af5ff7fe68c2cad9440634c143f20d6e0}{ValidateVectorOfStrings}}(\textcolor{keyword}{const} std::vector<std::string>\& vectorToValidate);}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{75         \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{76         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classxmlp_1_1_xml_parser_ae8d516cdff5c4caff6c3b6c88d07eb84}{ValidateContainerWithStrings}}(\textcolor{keyword}{const} T\& containerToValidate);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{92         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classxmlp_1_1_xml_parser_a3456aad54096443dce609bfc00f04de1}{InsertData}}(\textcolor{keyword}{const} std::list<XmlData>::iterator\& posToInsertIt, std::list<std::string> listToInsert);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94         \textcolor{comment}{// Insert data before iterator like in std}}
+\DoxyCodeLine{95         \textcolor{comment}{// Warning, data copieng. May end your RAM.}}
+\DoxyCodeLine{117 \textcolor{comment}{}        \textcolor{keywordtype}{bool} \mbox{\hyperlink{classxmlp_1_1_xml_parser_a3456aad54096443dce609bfc00f04de1}{InsertData}}(\textcolor{keyword}{const} std::list<XmlData>::iterator\& firstPosToInsertIt, \textcolor{keyword}{const} std::list<XmlData>::iterator\& secondPosToInsertIt, }
+\DoxyCodeLine{118         std::list<std::string> firstListToInsert, std::list<std::string> secondListToInsert);}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{127         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classxmlp_1_1_xml_parser_aca73b36a8d61eee27b3534072d124e51}{WriteDataToFile}}(std::string fileName);}
+\DoxyCodeLine{128     \};}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131     \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{132     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classxmlp_1_1_xml_parser_ae8d516cdff5c4caff6c3b6c88d07eb84}{XmlParser::ValidateContainerWithStrings}}(\textcolor{keyword}{const} T\& containerToValidate)}
+\DoxyCodeLine{133     \{}
+\DoxyCodeLine{134         \textcolor{keywordflow}{return} \mbox{\hyperlink{namespacexmlp_a619d4caef71a468a41aa539abd2492de}{Validate}}(containerToValidate.begin(), containerToValidate.end(), \&Data);}
+\DoxyCodeLine{135     \}}
+\DoxyCodeLine{136 \}}
+
+\end{DoxyCode}

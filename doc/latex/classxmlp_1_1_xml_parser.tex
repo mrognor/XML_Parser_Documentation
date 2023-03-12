@@ -7,13 +7,12 @@ Simple xml parser.
 
 
 
-{\ttfamily \#include $<$X\+M\+L\+\_\+\+Parser.\+h$>$}
+{\ttfamily \#include $<$XML\+\_\+\+Parser.\+h$>$}
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classxmlp_1_1_xml_parser_a0e12e75330d4f099c4ff28a12bcc7869}\label{classxmlp_1_1_xml_parser_a0e12e75330d4f099c4ff28a12bcc7869}} 
-std\+::list$<$ \mbox{\hyperlink{structxmlp_1_1_xml_data}{Xml\+Data}} $>$ \& \mbox{\hyperlink{classxmlp_1_1_xml_parser_a0e12e75330d4f099c4ff28a12bcc7869}{Get\+Data}} ()
+std\+::list$<$ \mbox{\hyperlink{structxmlp_1_1_xml_data}{Xml\+Data}} $>$ \& \mbox{\hyperlink{classxmlp_1_1_xml_parser_a1af9d1ddeac610a2357ad900c5b32f86}{Get\+Data}} ()
 \begin{DoxyCompactList}\small\item\em Return list with parsed xml data. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classxmlp_1_1_xml_parser_a8b9790a6456070167b3a675e87257a3e}{Set\+Path\+Saving}} (bool is\+Path\+Saving)
 \begin{DoxyCompactList}\small\item\em This function is needed to set the path of each tag to be saved. \end{DoxyCompactList}\item 
@@ -37,6 +36,16 @@ bool \mbox{\hyperlink{classxmlp_1_1_xml_parser_aca73b36a8d61eee27b3534072d124e51
 Simple xml parser. 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classxmlp_1_1_xml_parser_a1af9d1ddeac610a2357ad900c5b32f86}\label{classxmlp_1_1_xml_parser_a1af9d1ddeac610a2357ad900c5b32f86}} 
+\index{xmlp::XmlParser@{xmlp::XmlParser}!GetData@{GetData}}
+\index{GetData@{GetData}!xmlp::XmlParser@{xmlp::XmlParser}}
+\doxysubsubsection{\texorpdfstring{GetData()}{GetData()}}
+{\footnotesize\ttfamily std\+::list$<$ \mbox{\hyperlink{structxmlp_1_1_xml_data}{Xml\+Data}} $>$ \& xmlp\+::\+Xml\+Parser\+::\+Get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return list with parsed xml data. 
+
 \mbox{\Hypertarget{classxmlp_1_1_xml_parser_adbf5dc2e7b4c89015fa7b9384c20df43}\label{classxmlp_1_1_xml_parser_adbf5dc2e7b4c89015fa7b9384c20df43}} 
 \index{xmlp::XmlParser@{xmlp::XmlParser}!InsertData@{InsertData}}
 \index{InsertData@{InsertData}!xmlp::XmlParser@{xmlp::XmlParser}}
@@ -50,9 +59,9 @@ Function for inserting data into a list with xml data.
 Inserts first list before the first iterator. Inserts second list before the second iterator If adding data failed, the list with xml information does not change This function completely copies the original list, then inserts your data there, then checks them for validity and, if successful, assigns the original list to the list with the added elements
 
 \begin{DoxyWarning}{Warning}
-In this function, a new list is created larger than the size of the original list, if your list is very large, then you may not have enough R\+AM, in such cases, insert data through the getter to the original list 
+In this function, a new list is created larger than the size of the original list, if your list is very large, then you may not have enough RAM, in such cases, insert data through the getter to the original list 
 
-To insert this symbols\+: (", \textquotesingle{}, $<$, $>$, \&) you have to use next strings\+: (", \textquotesingle{}, $<$, $>$, \&) Note that the function will not replace these sequences with their symbols
+To insert this symbols\+: ("{}, \textquotesingle{}, \texorpdfstring{$<$}{<}, \texorpdfstring{$>$}{>}, \&) you have to use next strings\+: ("{}, \textquotesingle{}, \texorpdfstring{$<$}{<}, \texorpdfstring{$>$}{>}, \&) Note that the function will not replace these sequences with their symbols
 \end{DoxyWarning}
 
 \begin{DoxyParams}[1]{Parameters}
@@ -81,7 +90,7 @@ Function for inserting data into a list with xml data.
 Inserts data before the iterator, just like in std If adding data failed, the list with xml information does not change
 
 \begin{DoxyWarning}{Warning}
-To insert this symbols\+: (", \textquotesingle{}, $<$, $>$, \&) you have to use next strings\+: (", \textquotesingle{}, $<$, $>$, \&) Note that the function will not replace these sequences with their symbols
+To insert this symbols\+: ("{}, \textquotesingle{}, \texorpdfstring{$<$}{<}, \texorpdfstring{$>$}{>}, \&) you have to use next strings\+: ("{}, \textquotesingle{}, \texorpdfstring{$<$}{<}, \texorpdfstring{$>$}{>}, \&) Note that the function will not replace these sequences with their symbols
 \end{DoxyWarning}
 
 \begin{DoxyParams}[1]{Parameters}
@@ -104,7 +113,7 @@ will return true if the insertion was successful, otherwise it will return false
 This function is needed to set the path of each tag to be saved. 
 
 \begin{DoxyWarning}{Warning}
-Disabling the saving of the tag path is necessary to save space in R\+AM, since the path takes up more space than the tag name, storing the path spends a lot of memory. At the same time it is very easy to determine the path during tag processing 
+Disabling the saving of the tag path is necessary to save space in RAM, since the path takes up more space than the tag name, storing the path spends a lot of memory. At the same time it is very easy to determine the path during tag processing 
 \end{DoxyWarning}
 \mbox{\Hypertarget{classxmlp_1_1_xml_parser_ae8d516cdff5c4caff6c3b6c88d07eb84}\label{classxmlp_1_1_xml_parser_ae8d516cdff5c4caff6c3b6c88d07eb84}} 
 \index{xmlp::XmlParser@{xmlp::XmlParser}!ValidateContainerWithStrings@{ValidateContainerWithStrings}}
@@ -186,9 +195,3 @@ This function fully rewrite file with own writing structure. That means that all
 \begin{DoxyReturn}{Returns}
 will return true if the write was successful, otherwise it will return false 
 \end{DoxyReturn}
-
-
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
-\item 
-/home/mrognor/\+Desktop/\+X\+M\+L\+\_\+\+Parser/X\+M\+L\+\_\+\+Parser.\+h\item 
-/home/mrognor/\+Desktop/\+X\+M\+L\+\_\+\+Parser/X\+M\+L\+\_\+\+Parser.\+cpp\end{DoxyCompactItemize}

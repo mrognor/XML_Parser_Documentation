@@ -1,0 +1,234 @@
+\hypertarget{namespacexmlp}{}\doxysection{xmlp Namespace Reference}
+\label{namespacexmlp}\index{xmlp@{xmlp}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structxmlp_1_1_xml_data}{Xml\+Data}}
+\begin{DoxyCompactList}\small\item\em Struct to store all required information about xml data ~\newline
+ \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classxmlp_1_1_xml_parser}{Xml\+Parser}}
+\begin{DoxyCompactList}\small\item\em Simple xml parser. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484e}{Xml\+Data\+Type}} \{ \newline
+\mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea8f928046bd5b1c7c32f687c8fb0e5e79}{empty}} = -\/1
+, \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea8ba203bfc4c7f25666d5a7adf68a463b}{opening\+Tag}} = 0
+, \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea01b6fc85b257f90ce94c01834c2e1753}{closing\+Tag}} = 1
+, \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484eabf671c69fbb1441f82bc51926ccc1c28}{inline\+Tag}} = 2
+, \newline
+\mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea175899900df9e9ae4c2f22b8b2066035}{text}} = 3
+, \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484eace6911612f7c3bd135d5f155ecdbb9ff}{comment}} = 4
+ \}
+\begin{DoxyCompactList}\small\item\em Struct to store xml data type inside list with xml data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespacexmlp_a3a456a85835826d0a606e1b9ec28ce33}{Set\+Log\+Func}} (void($\ast$log\+Func\+Ptr)(std\+::string))
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespacexmlp_a7fbad1377e7248930895b0f366f0c564}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{structxmlp_1_1_xml_data}{Xml\+Data}} \&data)
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespacexmlp_ac416a5c95c9f040553dcc98c865cd903}{Split}} (const std\+::string \&string\+To\+Split, const std\+::string \&splitter\+String)
+\item 
+std\+::string \mbox{\hyperlink{namespacexmlp_aec53c412e39445ac9218333b90d60f25}{Trim\+String}} (const std\+::string \&str, bool is\+From\+Left, bool is\+From\+Right)
+\item 
+bool \mbox{\hyperlink{namespacexmlp_aa94b7630bd1af2f7ccfbcd3ef43ad807}{Check\+Tag\+Or\+Param\+Name}} (const std\+::string \&tag\+String, bool is\+Tag\+Name)
+\item 
+bool \mbox{\hyperlink{namespacexmlp_a2ad4f1f97f171c233649124b23f35879}{Check\+String}} (const std\+::string \&value\+String)
+\item 
+bool \mbox{\hyperlink{namespacexmlp_ad452796d567eae1b5998f5db6797ff9d}{Parse\+Tag\+String}} (const std\+::string \&tag\+String, std\+::string \&tag\+Name, std\+::map$<$ std\+::string, std\+::string $>$ \&params\+And\+Values)
+\item 
+{\footnotesize template$<$class T , class V $>$ }\\int \mbox{\hyperlink{namespacexmlp_a58c07021683c603adac0127dac738d41}{Count}} (T where, V what)
+\begin{DoxyCompactList}\small\item\em Template function for checking the number of occurrences of what in where. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\bool \mbox{\hyperlink{namespacexmlp_a619d4caef71a468a41aa539abd2492de}{Validate}} (T begin, T end, std\+::list$<$ \mbox{\hyperlink{structxmlp_1_1_xml_data}{Xml\+Data}} $>$ $\ast$list\+With\+All\+Data=nullptr, bool is\+Path\+Saving=true)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespacexmlp_a7dfdf690ac1440f989a5f1321770484e}\label{namespacexmlp_a7dfdf690ac1440f989a5f1321770484e}} 
+\index{xmlp@{xmlp}!XmlDataType@{XmlDataType}}
+\index{XmlDataType@{XmlDataType}!xmlp@{xmlp}}
+\doxysubsubsection{\texorpdfstring{XmlDataType}{XmlDataType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484e}{xmlp\+::\+Xml\+Data\+Type}}}
+
+
+
+Struct to store xml data type inside list with xml data. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{empty@{empty}!xmlp@{xmlp}}\index{xmlp@{xmlp}!empty@{empty}}}\mbox{\Hypertarget{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea8f928046bd5b1c7c32f687c8fb0e5e79}\label{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea8f928046bd5b1c7c32f687c8fb0e5e79}} 
+empty&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{openingTag@{openingTag}!xmlp@{xmlp}}\index{xmlp@{xmlp}!openingTag@{openingTag}}}\mbox{\Hypertarget{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea8ba203bfc4c7f25666d5a7adf68a463b}\label{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea8ba203bfc4c7f25666d5a7adf68a463b}} 
+opening\+Tag&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{closingTag@{closingTag}!xmlp@{xmlp}}\index{xmlp@{xmlp}!closingTag@{closingTag}}}\mbox{\Hypertarget{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea01b6fc85b257f90ce94c01834c2e1753}\label{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea01b6fc85b257f90ce94c01834c2e1753}} 
+closing\+Tag&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{inlineTag@{inlineTag}!xmlp@{xmlp}}\index{xmlp@{xmlp}!inlineTag@{inlineTag}}}\mbox{\Hypertarget{namespacexmlp_a7dfdf690ac1440f989a5f1321770484eabf671c69fbb1441f82bc51926ccc1c28}\label{namespacexmlp_a7dfdf690ac1440f989a5f1321770484eabf671c69fbb1441f82bc51926ccc1c28}} 
+inline\+Tag&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{text@{text}!xmlp@{xmlp}}\index{xmlp@{xmlp}!text@{text}}}\mbox{\Hypertarget{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea175899900df9e9ae4c2f22b8b2066035}\label{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea175899900df9e9ae4c2f22b8b2066035}} 
+text&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{comment@{comment}!xmlp@{xmlp}}\index{xmlp@{xmlp}!comment@{comment}}}\mbox{\Hypertarget{namespacexmlp_a7dfdf690ac1440f989a5f1321770484eace6911612f7c3bd135d5f155ecdbb9ff}\label{namespacexmlp_a7dfdf690ac1440f989a5f1321770484eace6911612f7c3bd135d5f155ecdbb9ff}} 
+comment&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacexmlp_a2ad4f1f97f171c233649124b23f35879}\label{namespacexmlp_a2ad4f1f97f171c233649124b23f35879}} 
+\index{xmlp@{xmlp}!CheckString@{CheckString}}
+\index{CheckString@{CheckString}!xmlp@{xmlp}}
+\doxysubsubsection{\texorpdfstring{CheckString()}{CheckString()}}
+{\footnotesize\ttfamily bool xmlp\+::\+Check\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value\+String }\end{DoxyParamCaption})}
+
+This function checks the parameter value or strings between tags for validity. If it is valid, it will return true, otherwise false
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value\+String} & string with parameter value or strings between tags\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return true if this string can be valid parameter value or strings between tags, return false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacexmlp_aa94b7630bd1af2f7ccfbcd3ef43ad807}\label{namespacexmlp_aa94b7630bd1af2f7ccfbcd3ef43ad807}} 
+\index{xmlp@{xmlp}!CheckTagOrParamName@{CheckTagOrParamName}}
+\index{CheckTagOrParamName@{CheckTagOrParamName}!xmlp@{xmlp}}
+\doxysubsubsection{\texorpdfstring{CheckTagOrParamName()}{CheckTagOrParamName()}}
+{\footnotesize\ttfamily bool xmlp\+::\+Check\+Tag\+Or\+Param\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag\+String,  }\item[{bool}]{is\+Tag\+Name }\end{DoxyParamCaption})}
+
+This function checks the tag name or the name of its parameter for validity. If it is valid, it will return true, otherwise false
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tag\+String} & string with tag name or tag parametr name \\
+\hline
+\mbox{\texttt{ in}}  & {\em is\+Tag\+Name} & boolean variable to indicate that the tag or parameter name should be checked\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return true if this string can be valid tag name or parametr name, return false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacexmlp_a58c07021683c603adac0127dac738d41}\label{namespacexmlp_a58c07021683c603adac0127dac738d41}} 
+\index{xmlp@{xmlp}!Count@{Count}}
+\index{Count@{Count}!xmlp@{xmlp}}
+\doxysubsubsection{\texorpdfstring{Count()}{Count()}}
+{\footnotesize\ttfamily template$<$class T , class V $>$ \\
+int xmlp\+::\+Count (\begin{DoxyParamCaption}\item[{T}]{where,  }\item[{V}]{what }\end{DoxyParamCaption})}
+
+
+
+Template function for checking the number of occurrences of what in where. 
+
+\begin{DoxyWarning}{Warning}
+The where object must be iterable, i.\+e. it must have the begin and end functions 
+\end{DoxyWarning}
+\mbox{\Hypertarget{namespacexmlp_a7fbad1377e7248930895b0f366f0c564}\label{namespacexmlp_a7fbad1377e7248930895b0f366f0c564}} 
+\index{xmlp@{xmlp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!xmlp@{xmlp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream \& xmlp\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{const \mbox{\hyperlink{structxmlp_1_1_xml_data}{Xml\+Data}} \&}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacexmlp_ad452796d567eae1b5998f5db6797ff9d}\label{namespacexmlp_ad452796d567eae1b5998f5db6797ff9d}} 
+\index{xmlp@{xmlp}!ParseTagString@{ParseTagString}}
+\index{ParseTagString@{ParseTagString}!xmlp@{xmlp}}
+\doxysubsubsection{\texorpdfstring{ParseTagString()}{ParseTagString()}}
+{\footnotesize\ttfamily bool xmlp\+::\+Parse\+Tag\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag\+String,  }\item[{std\+::string \&}]{tag\+Name,  }\item[{std\+::map$<$ std\+::string, std\+::string $>$ \&}]{params\+And\+Values }\end{DoxyParamCaption})}
+
+This function checks the tag string for validity. If it is valid, it will return true, otherwise false
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tag\+String} & string with tag \\
+\hline
+\mbox{\texttt{ out}}  & {\em tag\+Name} & string to put tag name if tag string valid \\
+\hline
+\mbox{\texttt{ out}}  & {\em params\+And\+Values} & map to put all params and values if tag string valid\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return true if this string can be valid tag, return false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacexmlp_a3a456a85835826d0a606e1b9ec28ce33}\label{namespacexmlp_a3a456a85835826d0a606e1b9ec28ce33}} 
+\index{xmlp@{xmlp}!SetLogFunc@{SetLogFunc}}
+\index{SetLogFunc@{SetLogFunc}!xmlp@{xmlp}}
+\doxysubsubsection{\texorpdfstring{SetLogFunc()}{SetLogFunc()}}
+{\footnotesize\ttfamily void xmlp\+::\+Set\+Log\+Func (\begin{DoxyParamCaption}\item[{void($\ast$)(std\+::string)}]{log\+Func\+Ptr }\end{DoxyParamCaption})}
+
+Function for setting the logging function
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em log\+Func\+Ptr} & custom logging function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacexmlp_ac416a5c95c9f040553dcc98c865cd903}\label{namespacexmlp_ac416a5c95c9f040553dcc98c865cd903}} 
+\index{xmlp@{xmlp}!Split@{Split}}
+\index{Split@{Split}!xmlp@{xmlp}}
+\doxysubsubsection{\texorpdfstring{Split()}{Split()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ xmlp\+::\+Split (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{string\+To\+Split,  }\item[{const std\+::string \&}]{splitter\+String }\end{DoxyParamCaption})}
+
+Function to split a string using a splitter string
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em string\+To\+Split} & The string to be splitted \\
+\hline
+\mbox{\texttt{ in}}  & {\em splitter\+String} & The string that is used as a splitter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a vector of string consisting of parts of the string\+To\+Split 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacexmlp_aec53c412e39445ac9218333b90d60f25}\label{namespacexmlp_aec53c412e39445ac9218333b90d60f25}} 
+\index{xmlp@{xmlp}!TrimString@{TrimString}}
+\index{TrimString@{TrimString}!xmlp@{xmlp}}
+\doxysubsubsection{\texorpdfstring{TrimString()}{TrimString()}}
+{\footnotesize\ttfamily std\+::string xmlp\+::\+Trim\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str,  }\item[{bool}]{is\+From\+Left = {\ttfamily true},  }\item[{bool}]{is\+From\+Right = {\ttfamily true} }\end{DoxyParamCaption})}
+
+This function delete all spaces and tabs from line beggining and ending
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & The string to trim \\
+\hline
+\mbox{\texttt{ in}}  & {\em is\+From\+Left} & The function will delete all spaces from left \\
+\hline
+\mbox{\texttt{ in}}  & {\em is\+From\+Right} & The function will delete all spaces from right\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a trimmed string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacexmlp_a619d4caef71a468a41aa539abd2492de}\label{namespacexmlp_a619d4caef71a468a41aa539abd2492de}} 
+\index{xmlp@{xmlp}!Validate@{Validate}}
+\index{Validate@{Validate}!xmlp@{xmlp}}
+\doxysubsubsection{\texorpdfstring{Validate()}{Validate()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool xmlp\+::\+Validate (\begin{DoxyParamCaption}\item[{T}]{begin,  }\item[{T}]{end,  }\item[{std\+::list$<$ \mbox{\hyperlink{structxmlp_1_1_xml_data}{Xml\+Data}} $>$ $\ast$}]{list\+With\+All\+Data = {\ttfamily nullptr},  }\item[{bool}]{is\+Path\+Saving = {\ttfamily true} }\end{DoxyParamCaption})}
+
+This function is needed to check the container with xml data for validity
+
+\begin{DoxyWarning}{Warning}
+The iterator must contain the std\+::string
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em begin} & container start \\
+\hline
+\mbox{\texttt{ in}}  & {\em end} & container end \\
+\hline
+\mbox{\texttt{ out}}  & {\em list\+With\+All\+Data} & list for storing all data in a container. By default, the variable is nullptr and no data is saved. \\
+\hline
+\mbox{\texttt{ in}}  & {\em is\+Path\+Saving} & boolean variable to indicate whether to save the data path in the list. It is necessary because saving the path requires a lot of additional memory, and determining the path during list processing is quite simple \\
+\hline
+\end{DoxyParams}

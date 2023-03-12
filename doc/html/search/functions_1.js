@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getdata_25',['GetData',['../classxmlp_1_1_xml_parser.html#a0e12e75330d4f099c4ff28a12bcc7869',1,'xmlp::XmlParser']]]
+  ['getdata_0',['GetData',['../classxmlp_1_1_xml_parser.html#a1af9d1ddeac610a2357ad900c5b32f86',1,'xmlp::XmlParser']]]
 ];

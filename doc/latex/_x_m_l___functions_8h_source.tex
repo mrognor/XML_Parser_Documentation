@@ -1,0 +1,439 @@
+\hypertarget{_x_m_l___functions_8h_source}{}\doxysection{XML\+\_\+\+Functions.\+h}
+\label{_x_m_l___functions_8h_source}\index{C:/Users/timur/Desktop/XML\_Parser/XML\_Functions.h@{C:/Users/timur/Desktop/XML\_Parser/XML\_Functions.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <stack>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{// Pointer to log function. By default set to nullptr inside XML\_Functions.cpp}}
+\DoxyCodeLine{15 \textcolor{comment}{// Can be defined by user using SetLogFunc}}
+\DoxyCodeLine{16 \textcolor{keyword}{extern} void (*LogFuncPtr)(std::string);}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifndef NDEBUG}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define LOG(error) \(\backslash\)}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{    if (LogFuncPtr == nullptr) \(\backslash\)}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{        std::cerr << "{}\(\backslash\)x1B[31m"{}} << error << "{}\(\backslash\)033[0m"{} << std::endl; \(\backslash\)}
+\DoxyCodeLine{22     else \(\backslash\)}
+\DoxyCodeLine{23         LogFuncPtr(error);}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define LOG(error)}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacexmlp}{xmlp}}}
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{33     \textcolor{keyword}{enum} \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484e}{XmlDataType}}}
+\DoxyCodeLine{34     \{}
+\DoxyCodeLine{35         \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea8f928046bd5b1c7c32f687c8fb0e5e79}{empty}} = -\/1,}
+\DoxyCodeLine{36         \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea8ba203bfc4c7f25666d5a7adf68a463b}{openingTag}} = 0,}
+\DoxyCodeLine{37         \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea01b6fc85b257f90ce94c01834c2e1753}{closingTag}} = 1,}
+\DoxyCodeLine{38         \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484eabf671c69fbb1441f82bc51926ccc1c28}{inlineTag}} = 2,}
+\DoxyCodeLine{39         \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea175899900df9e9ae4c2f22b8b2066035}{text}} = 3,}
+\DoxyCodeLine{40         \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484eace6911612f7c3bd135d5f155ecdbb9ff}{comment}} = 4}
+\DoxyCodeLine{41     \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{44     \textcolor{keyword}{struct }\mbox{\hyperlink{structxmlp_1_1_xml_data}{XmlData}}}
+\DoxyCodeLine{45     \{}
+\DoxyCodeLine{47         \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484e}{XmlDataType}} \mbox{\hyperlink{structxmlp_1_1_xml_data_ae3025a30f6558750ad3f999c276054d8}{DataType}};}
+\DoxyCodeLine{49         std::string \mbox{\hyperlink{structxmlp_1_1_xml_data_a8c41362e8654ae88ad4ceb13d5f358c2}{Path}};}
+\DoxyCodeLine{51         std::string \mbox{\hyperlink{structxmlp_1_1_xml_data_aa23093e0b838acbe1332ccdcaee4c21d}{TagName}};}
+\DoxyCodeLine{54         std::map<std::string, std::string> \mbox{\hyperlink{structxmlp_1_1_xml_data_a5438946e30e91223bec7f99dcaac4c6c}{ParamsAndValues}};}
+\DoxyCodeLine{56         std::string \mbox{\hyperlink{structxmlp_1_1_xml_data_a42407bb4ec1896986bd0c8af4c02a7d6}{Data}};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58         \mbox{\hyperlink{structxmlp_1_1_xml_data_a617ca9d0aa60fda7e9c57ff84d4d5308}{XmlData}}() \{\}}
+\DoxyCodeLine{59         \mbox{\hyperlink{structxmlp_1_1_xml_data_abf44baef73bee9c56d6724aa3edc2514}{XmlData}}(std::string data) : \mbox{\hyperlink{structxmlp_1_1_xml_data_a42407bb4ec1896986bd0c8af4c02a7d6}{Data}}(data) \{\}}
+\DoxyCodeLine{60         \textcolor{keyword}{operator} std::string()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{structxmlp_1_1_xml_data_a42407bb4ec1896986bd0c8af4c02a7d6}{Data}}; \}}
+\DoxyCodeLine{61         \textcolor{keyword}{friend} std::ostream\& \mbox{\hyperlink{structxmlp_1_1_xml_data_a1e686a3b53cf1b295fa62083a5bdaec6}{operator<< }}(std::ostream \&out, \textcolor{keyword}{const} \mbox{\hyperlink{structxmlp_1_1_xml_data}{XmlData}} \&data);}
+\DoxyCodeLine{62     \};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 }
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacexmlp_a3a456a85835826d0a606e1b9ec28ce33}{SetLogFunc}}(\textcolor{keywordtype}{void} (*logFuncPtr)(std::string));}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{80     std::vector<std::string> \mbox{\hyperlink{namespacexmlp_ac416a5c95c9f040553dcc98c865cd903}{Split}}(\textcolor{keyword}{const} std::string\& stringToSplit, \textcolor{keyword}{const} std::string\& splitterString);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{91     std::string \mbox{\hyperlink{namespacexmlp_aec53c412e39445ac9218333b90d60f25}{TrimString}}(\textcolor{keyword}{const} std::string\& str, \textcolor{keywordtype}{bool} isFromLeft = \textcolor{keyword}{true}, \textcolor{keywordtype}{bool} isFromRight = \textcolor{keyword}{true});}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{102     \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacexmlp_aa94b7630bd1af2f7ccfbcd3ef43ad807}{CheckTagOrParamName}}(\textcolor{keyword}{const} std::string\& tagString, \textcolor{keywordtype}{bool} isTagName);}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 }
+\DoxyCodeLine{113     \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacexmlp_a2ad4f1f97f171c233649124b23f35879}{CheckString}}(\textcolor{keyword}{const} std::string\& valueString);}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{125     \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacexmlp_ad452796d567eae1b5998f5db6797ff9d}{ParseTagString}}(\textcolor{keyword}{const} std::string\& tagString, std::string\& tagName, std::map<std::string, std::string>\& paramsAndValues);}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{132     \textcolor{keyword}{template} <\textcolor{keyword}{class} T, \textcolor{keyword}{class} V>}
+\DoxyCodeLine{133     \textcolor{keywordtype}{int} \mbox{\hyperlink{namespacexmlp_a58c07021683c603adac0127dac738d41}{Count}}(T where, V what)}
+\DoxyCodeLine{134     \{}
+\DoxyCodeLine{135         \textcolor{keywordtype}{int} count = 0;}
+\DoxyCodeLine{136         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& it : where)}
+\DoxyCodeLine{137             \textcolor{keywordflow}{if} (it == what) count++;}
+\DoxyCodeLine{138         \textcolor{keywordflow}{return} count;}
+\DoxyCodeLine{139     \}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{152     \textcolor{keyword}{template}<\textcolor{keyword}{class} T>}
+\DoxyCodeLine{153     \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacexmlp_a619d4caef71a468a41aa539abd2492de}{Validate}}(T begin, T end, std::list<XmlData>* listWithAllData = \textcolor{keyword}{nullptr}, \textcolor{keywordtype}{bool} isPathSaving = \textcolor{keyword}{true})}
+\DoxyCodeLine{154     \{}
+\DoxyCodeLine{155         \textcolor{keywordflow}{if} (listWithAllData != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{156             listWithAllData-\/>clear();}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158         \textcolor{comment}{// String to store all chars in tags}}
+\DoxyCodeLine{159         std::string tagString;}
+\DoxyCodeLine{160         \textcolor{comment}{// String to store all chars between tags}}
+\DoxyCodeLine{161         std::string betweenTagsString;}
+\DoxyCodeLine{162         \textcolor{comment}{// String to store comments}}
+\DoxyCodeLine{163         std::string commentString;}
+\DoxyCodeLine{164         \textcolor{comment}{// List with all opened but not closed tags}}
+\DoxyCodeLine{165         std::list<std::string> tagStringsStackList;}
+\DoxyCodeLine{166         \textcolor{comment}{// Is string with tag name and params opened by "{}<"{} symbol}}
+\DoxyCodeLine{167         \textcolor{keywordtype}{bool} isTagStringOpened = \textcolor{keyword}{false};}
+\DoxyCodeLine{168         \textcolor{comment}{// Line number in file or number of element in vector }}
+\DoxyCodeLine{169         \textcolor{keywordtype}{int} lineNumber = 0;}
+\DoxyCodeLine{170         \textcolor{comment}{// Is string with comment}}
+\DoxyCodeLine{171         \textcolor{keywordtype}{bool} isComment = \textcolor{keyword}{false};}
+\DoxyCodeLine{172         \textcolor{comment}{// Variable to store if it was root element}}
+\DoxyCodeLine{173         \textcolor{keywordtype}{bool} wasAtLeastOneTag = \textcolor{keyword}{false};}
+\DoxyCodeLine{174         \textcolor{comment}{// Is string with xml specification}}
+\DoxyCodeLine{175         \textcolor{keywordtype}{bool} isSpecString = \textcolor{keyword}{false};}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177         \textcolor{comment}{// For loop by iterator}}
+\DoxyCodeLine{178         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} xmlStringIt = begin; xmlStringIt != end; xmlStringIt++)}
+\DoxyCodeLine{179         \{}
+\DoxyCodeLine{180             lineNumber++;}
+\DoxyCodeLine{181             std::string xmlString = (std::string)(*xmlStringIt);}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183             \textcolor{comment}{// Ignore line with xml specification}}
+\DoxyCodeLine{184             \textcolor{keywordflow}{if} (lineNumber == 1)}
+\DoxyCodeLine{185             \{}
+\DoxyCodeLine{186                 std::string trimString = \mbox{\hyperlink{namespacexmlp_aec53c412e39445ac9218333b90d60f25}{TrimString}}(xmlString, \textcolor{keyword}{false});}
+\DoxyCodeLine{187                 \textcolor{comment}{// Check if it is starts from "{}<?"{} string}}
+\DoxyCodeLine{188                 \textcolor{keywordflow}{if}(xmlString.length() >= 5 \&\& xmlString[0] == \textcolor{charliteral}{'<'} \&\& xmlString[1] == \textcolor{charliteral}{'?'} \&\& xmlString[2] == \textcolor{charliteral}{'x'} \&\& }
+\DoxyCodeLine{189                 xmlString[3] == \textcolor{charliteral}{'m'} \&\& xmlString[4] == \textcolor{charliteral}{'l'})}
+\DoxyCodeLine{190                 \{}
+\DoxyCodeLine{191                     isSpecString = \textcolor{keyword}{true};}
+\DoxyCodeLine{192                     \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{193                 \}}
+\DoxyCodeLine{194             \}}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196             \textcolor{comment}{// For loop by string}}
+\DoxyCodeLine{197             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} stringChar = xmlString.begin(); stringChar != xmlString.end(); stringChar++)}
+\DoxyCodeLine{198             \{}
+\DoxyCodeLine{199                 \textcolor{comment}{// Check if it is closing spec string}}
+\DoxyCodeLine{200                 \textcolor{keywordflow}{if} (isSpecString \&\& *stringChar == \textcolor{charliteral}{'>'} \&\& *(stringChar -\/ 1) == \textcolor{charliteral}{'?'})}
+\DoxyCodeLine{201                 \{}
+\DoxyCodeLine{202                     isSpecString = \textcolor{keyword}{false};}
+\DoxyCodeLine{203                     \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{204                 \}}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206                 \textcolor{comment}{// Skip logic if it is spec string}}
+\DoxyCodeLine{207                 \textcolor{keywordflow}{if} (isSpecString)}
+\DoxyCodeLine{208                     \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210                 \textcolor{comment}{// Check if it is opening comment}}
+\DoxyCodeLine{211                 \textcolor{keywordflow}{if} ((stringChar + 1) != xmlString.end() \&\& (stringChar + 2) != xmlString.end() \&\&}
+\DoxyCodeLine{212                 *stringChar == \textcolor{charliteral}{'<'} \&\& *(stringChar + 1) == \textcolor{charliteral}{'!'} \&\& *(stringChar + 2) == \textcolor{charliteral}{'-\/'} \&\& *(stringChar + 3) == \textcolor{charliteral}{'-\/'})}
+\DoxyCodeLine{213                 \{}
+\DoxyCodeLine{214                     isComment = \textcolor{keyword}{true};}
+\DoxyCodeLine{215                     commentString += *stringChar;}
+\DoxyCodeLine{216                     \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{217                 \}}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219                 \textcolor{comment}{// Check if it is closing comment}}
+\DoxyCodeLine{220                 \textcolor{keywordflow}{if} (stringChar != xmlString.begin() \&\& (stringChar -\/ 1) != xmlString.begin() \&\&}
+\DoxyCodeLine{221                     *stringChar == \textcolor{charliteral}{'>'} \&\& *(stringChar -\/ 1) == \textcolor{charliteral}{'-\/'} \&\& *(stringChar -\/ 2) == \textcolor{charliteral}{'-\/'})}
+\DoxyCodeLine{222                 \{}
+\DoxyCodeLine{223                     isComment = \textcolor{keyword}{false};}
+\DoxyCodeLine{224                     commentString += *stringChar;}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226                     \textcolor{comment}{// Check if it is string "{}-\/-\/"{} on comment}}
+\DoxyCodeLine{227                     \textcolor{keywordflow}{if} (commentString.substr(4, commentString.length() -\/ 7).find(\textcolor{stringliteral}{"{}-\/-\/"{}}) != -\/1)}
+\DoxyCodeLine{228                     \{}
+\DoxyCodeLine{229                         LOG(\textcolor{stringliteral}{"{}The string \(\backslash\)"{}-\/-\/\(\backslash\)"{} is not valid inside comments"{}});}
+\DoxyCodeLine{230                         \textcolor{keywordflow}{if} (listWithAllData != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{231                             listWithAllData-\/>clear();}
+\DoxyCodeLine{232                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{233                     \}}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235                     \textcolor{comment}{// Add comment to XmlData list}}
+\DoxyCodeLine{236                     \textcolor{keywordflow}{if}(listWithAllData != \textcolor{keyword}{nullptr} \&\& !commentString.empty())}
+\DoxyCodeLine{237                     \{}
+\DoxyCodeLine{238                         \textcolor{comment}{// Create XmlData object}}
+\DoxyCodeLine{239                         \mbox{\hyperlink{structxmlp_1_1_xml_data}{XmlData}} commentData;}
+\DoxyCodeLine{240                         commentData.\mbox{\hyperlink{structxmlp_1_1_xml_data_a42407bb4ec1896986bd0c8af4c02a7d6}{Data}} = commentString;}
+\DoxyCodeLine{241                         commentData.\mbox{\hyperlink{structxmlp_1_1_xml_data_ae3025a30f6558750ad3f999c276054d8}{DataType}} = \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484eace6911612f7c3bd135d5f155ecdbb9ff}{comment}};}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243                         \textcolor{comment}{// Find path}}
+\DoxyCodeLine{244                         \textcolor{keywordflow}{if} (isPathSaving)}
+\DoxyCodeLine{245                         \{}
+\DoxyCodeLine{246                             std::string path = \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{247                             \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& it : tagStringsStackList)}
+\DoxyCodeLine{248                                 path = path + it + \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{249                             commentData.\mbox{\hyperlink{structxmlp_1_1_xml_data_a8c41362e8654ae88ad4ceb13d5f358c2}{Path}} = path;}
+\DoxyCodeLine{250                         \}}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252                         \textcolor{comment}{// Store data}}
+\DoxyCodeLine{253                         listWithAllData-\/>push\_back(commentData);}
+\DoxyCodeLine{254                     \}}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256                     commentString.clear();}
+\DoxyCodeLine{257                     \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{258                 \}}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260                 \textcolor{comment}{// Skip all logic if it is a comment}}
+\DoxyCodeLine{261                 \textcolor{keywordflow}{if} (isComment)}
+\DoxyCodeLine{262                 \{}
+\DoxyCodeLine{263                     commentString += *stringChar;}
+\DoxyCodeLine{264                     \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{265                 \}}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{267                 \textcolor{comment}{// Check opening tag string}}
+\DoxyCodeLine{268                 \textcolor{keywordflow}{if} (*stringChar == \textcolor{charliteral}{'<'})}
+\DoxyCodeLine{269                 \{}
+\DoxyCodeLine{270                     \textcolor{comment}{// Check if it is second root element}}
+\DoxyCodeLine{271                     \textcolor{keywordflow}{if} (tagStringsStackList.size() == 0 \&\& wasAtLeastOneTag)}
+\DoxyCodeLine{272                     \{}
+\DoxyCodeLine{273                         LOG(\textcolor{stringliteral}{"{}There can be only one root element in a file. New root element on line: "{}} + std::to\_string(lineNumber));}
+\DoxyCodeLine{274                         \textcolor{keywordflow}{if} (listWithAllData != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{275                             listWithAllData-\/>clear();}
+\DoxyCodeLine{276                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{277                     \}}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279                     \textcolor{comment}{// '<' symbol without closing tag}}
+\DoxyCodeLine{280                     \textcolor{keywordflow}{if} (isTagStringOpened)}
+\DoxyCodeLine{281                     \{}
+\DoxyCodeLine{282                         LOG(\textcolor{stringliteral}{"{}Opened new tag without closing previous on line: "{}} + std::to\_string(lineNumber));}
+\DoxyCodeLine{283                         \textcolor{keywordflow}{if} (listWithAllData != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{284                             listWithAllData-\/>clear();}
+\DoxyCodeLine{285                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{286                     \}}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288                     isTagStringOpened = \textcolor{keyword}{true};}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290                     \textcolor{comment}{// Check string between tags to valid}}
+\DoxyCodeLine{291                     std::string trimmedValueString = \mbox{\hyperlink{namespacexmlp_aec53c412e39445ac9218333b90d60f25}{TrimString}}(betweenTagsString);}
+\DoxyCodeLine{292                     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{namespacexmlp_a2ad4f1f97f171c233649124b23f35879}{CheckString}}(trimmedValueString))}
+\DoxyCodeLine{293                     \{}
+\DoxyCodeLine{294                         LOG(\textcolor{stringliteral}{"{}Invalid symbol on line: "{}} + std::to\_string(lineNumber));}
+\DoxyCodeLine{295                         \textcolor{keywordflow}{if} (listWithAllData != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{296                             listWithAllData-\/>clear();}
+\DoxyCodeLine{297                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{298                     \}}
+\DoxyCodeLine{299                     }
+\DoxyCodeLine{300                     \textcolor{comment}{// Add string between tag to XmlData list}}
+\DoxyCodeLine{301                     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{namespacexmlp_aec53c412e39445ac9218333b90d60f25}{TrimString}}(betweenTagsString).\mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea8f928046bd5b1c7c32f687c8fb0e5e79}{empty}}() \&\& listWithAllData != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{302                     \{}
+\DoxyCodeLine{303                         \textcolor{comment}{// Create XmlData object}}
+\DoxyCodeLine{304                         \mbox{\hyperlink{structxmlp_1_1_xml_data}{XmlData}} textData;}
+\DoxyCodeLine{305                         textData.\mbox{\hyperlink{structxmlp_1_1_xml_data_a42407bb4ec1896986bd0c8af4c02a7d6}{Data}} = \mbox{\hyperlink{namespacexmlp_aec53c412e39445ac9218333b90d60f25}{TrimString}}(betweenTagsString);}
+\DoxyCodeLine{306                         textData.\mbox{\hyperlink{structxmlp_1_1_xml_data_ae3025a30f6558750ad3f999c276054d8}{DataType}} = \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea175899900df9e9ae4c2f22b8b2066035}{text}};}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308                         \textcolor{comment}{// Find path}}
+\DoxyCodeLine{309                         \textcolor{keywordflow}{if} (isPathSaving)}
+\DoxyCodeLine{310                         \{}
+\DoxyCodeLine{311                             std::string path = \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{312                             \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& it : tagStringsStackList)}
+\DoxyCodeLine{313                                 path = path + it + \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{314                             textData.\mbox{\hyperlink{structxmlp_1_1_xml_data_a8c41362e8654ae88ad4ceb13d5f358c2}{Path}} = path;}
+\DoxyCodeLine{315                         \}}
+\DoxyCodeLine{316 }
+\DoxyCodeLine{317                         \textcolor{comment}{// Store data}}
+\DoxyCodeLine{318                         listWithAllData-\/>push\_back(textData);}
+\DoxyCodeLine{319                     \}}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321                     betweenTagsString.clear();}
+\DoxyCodeLine{322                     \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{323                 \}}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{325                 \textcolor{comment}{// Check closing tag string}}
+\DoxyCodeLine{326                 \textcolor{keywordflow}{if} (*stringChar == \textcolor{charliteral}{'>'})}
+\DoxyCodeLine{327                 \{}
+\DoxyCodeLine{328                     isTagStringOpened = \textcolor{keyword}{false};}
+\DoxyCodeLine{329                     std::string tagName;}
+\DoxyCodeLine{330                     std::map<std::string, std::string> paramsAndValues;}
+\DoxyCodeLine{331 }
+\DoxyCodeLine{332                     \textcolor{comment}{// Check if it is closing tag}}
+\DoxyCodeLine{333                     \textcolor{keywordflow}{if} (tagString[0] == \textcolor{charliteral}{'/'})}
+\DoxyCodeLine{334                     \{}
+\DoxyCodeLine{335                         \textcolor{comment}{// Check if closing tag equals or not opening tag}}
+\DoxyCodeLine{336                         \textcolor{keywordflow}{if} (tagStringsStackList.size() != 0 \&\& \mbox{\hyperlink{namespacexmlp_aec53c412e39445ac9218333b90d60f25}{TrimString}}(tagString.substr(1)) == tagStringsStackList.back())}
+\DoxyCodeLine{337                         \{}
+\DoxyCodeLine{338                             tagName = tagStringsStackList.back();}
+\DoxyCodeLine{339                             tagStringsStackList.pop\_back();}
+\DoxyCodeLine{340                         \}}
+\DoxyCodeLine{341                         \textcolor{keywordflow}{else} }
+\DoxyCodeLine{342                         \{}
+\DoxyCodeLine{343                             \textcolor{keywordflow}{if} (tagStringsStackList.empty())}
+\DoxyCodeLine{344                             \{}
+\DoxyCodeLine{345                                 LOG(\textcolor{stringliteral}{"{}Closing not opened tag on line: "{}} + std::to\_string(lineNumber));}
+\DoxyCodeLine{346                             \}}
+\DoxyCodeLine{347                             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{348                             \{}
+\DoxyCodeLine{349                                 LOG(\textcolor{stringliteral}{"{}Closing wrong tag on line: "{}} + std::to\_string(lineNumber) + \textcolor{stringliteral}{"{} Expected: "{}} + tagStringsStackList.back());}
+\DoxyCodeLine{350                             \}}
+\DoxyCodeLine{351                             \textcolor{keywordflow}{if} (listWithAllData != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{352                                 listWithAllData-\/>clear();}
+\DoxyCodeLine{353                             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{354                         \}}
+\DoxyCodeLine{355                     \}}
+\DoxyCodeLine{356                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{357                     \{}
+\DoxyCodeLine{358                         \textcolor{comment}{// Check if it is not one line tag}}
+\DoxyCodeLine{359                         \textcolor{keywordflow}{if} (tagString[tagString.length() -\/ 1] != \textcolor{charliteral}{'/'})}
+\DoxyCodeLine{360                         \{}
+\DoxyCodeLine{361                             \textcolor{keywordflow}{if} (!\mbox{\hyperlink{namespacexmlp_ad452796d567eae1b5998f5db6797ff9d}{ParseTagString}}(tagString, tagName, paramsAndValues))}
+\DoxyCodeLine{362                             \{}
+\DoxyCodeLine{363                                 LOG(\textcolor{stringliteral}{"{}Wrong tag name on line: "{}} + std::to\_string(lineNumber));}
+\DoxyCodeLine{364                                 \textcolor{keywordflow}{if} (listWithAllData != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{365                                     listWithAllData-\/>clear();}
+\DoxyCodeLine{366                                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{367                             \}}
+\DoxyCodeLine{368 }
+\DoxyCodeLine{369                             tagStringsStackList.push\_back(tagName); \textcolor{comment}{// Add opening tag to stack}}
+\DoxyCodeLine{370                             wasAtLeastOneTag = \textcolor{keyword}{true};}
+\DoxyCodeLine{371                         \}}
+\DoxyCodeLine{372                         \textcolor{keywordflow}{else} \textcolor{comment}{// One line tag check}}
+\DoxyCodeLine{373                         \{}
+\DoxyCodeLine{374                             \textcolor{keywordflow}{if} (!\mbox{\hyperlink{namespacexmlp_ad452796d567eae1b5998f5db6797ff9d}{ParseTagString}}(tagString.substr(0, tagString.length() -\/ 1), tagName, paramsAndValues))}
+\DoxyCodeLine{375                             \{}
+\DoxyCodeLine{376                                 LOG(\textcolor{stringliteral}{"{}Wrong tag name on line: "{}} + std::to\_string(lineNumber));}
+\DoxyCodeLine{377                                 \textcolor{keywordflow}{if} (listWithAllData != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{378                                     listWithAllData-\/>clear();}
+\DoxyCodeLine{379                                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{380                             \}}
+\DoxyCodeLine{381                         \}}
+\DoxyCodeLine{382                     \}}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384                     \textcolor{comment}{// Add tag to XmlDataList}}
+\DoxyCodeLine{385                     \textcolor{keywordflow}{if} (listWithAllData != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{386                     \{}
+\DoxyCodeLine{387                         \textcolor{comment}{// Create XmlData object}}
+\DoxyCodeLine{388                         \mbox{\hyperlink{structxmlp_1_1_xml_data}{XmlData}} tagData;}
+\DoxyCodeLine{389                         }
+\DoxyCodeLine{390                         \textcolor{comment}{// Find XmlData object type}}
+\DoxyCodeLine{391                         \textcolor{comment}{// Opening tag}}
+\DoxyCodeLine{392                         tagData.\mbox{\hyperlink{structxmlp_1_1_xml_data_ae3025a30f6558750ad3f999c276054d8}{DataType}} = \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea8ba203bfc4c7f25666d5a7adf68a463b}{openingTag}};}
+\DoxyCodeLine{393                         \textcolor{comment}{// Closing tag}}
+\DoxyCodeLine{394                         \textcolor{keywordflow}{if} (tagString[0] == \textcolor{charliteral}{'/'})}
+\DoxyCodeLine{395                             tagData.\mbox{\hyperlink{structxmlp_1_1_xml_data_ae3025a30f6558750ad3f999c276054d8}{DataType}} = \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea01b6fc85b257f90ce94c01834c2e1753}{closingTag}};}
+\DoxyCodeLine{396                         \textcolor{comment}{// Inline tag}}
+\DoxyCodeLine{397                         \textcolor{keywordflow}{if} (tagString[tagString.length() -\/ 1] == \textcolor{charliteral}{'/'})}
+\DoxyCodeLine{398                             tagData.\mbox{\hyperlink{structxmlp_1_1_xml_data_ae3025a30f6558750ad3f999c276054d8}{DataType}} = \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484eabf671c69fbb1441f82bc51926ccc1c28}{inlineTag}};}
+\DoxyCodeLine{399 }
+\DoxyCodeLine{400                         \textcolor{comment}{// Format raw data}}
+\DoxyCodeLine{401                         \textcolor{keywordflow}{if} (tagData.\mbox{\hyperlink{structxmlp_1_1_xml_data_ae3025a30f6558750ad3f999c276054d8}{DataType}} == \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea01b6fc85b257f90ce94c01834c2e1753}{closingTag}})}
+\DoxyCodeLine{402                             tagData.\mbox{\hyperlink{structxmlp_1_1_xml_data_a42407bb4ec1896986bd0c8af4c02a7d6}{Data}} = \textcolor{stringliteral}{"{}<"{}} + \mbox{\hyperlink{namespacexmlp_aec53c412e39445ac9218333b90d60f25}{TrimString}}(tagString) + \textcolor{stringliteral}{"{}>"{}};}
+\DoxyCodeLine{403                         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{404                         \{}
+\DoxyCodeLine{405                             tagData.\mbox{\hyperlink{structxmlp_1_1_xml_data_a42407bb4ec1896986bd0c8af4c02a7d6}{Data}} = \textcolor{stringliteral}{"{}<"{}} + tagName;}
+\DoxyCodeLine{406 }
+\DoxyCodeLine{407                             \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& it : paramsAndValues)}
+\DoxyCodeLine{408                                 tagData.\mbox{\hyperlink{structxmlp_1_1_xml_data_a42407bb4ec1896986bd0c8af4c02a7d6}{Data}} = tagData.\mbox{\hyperlink{structxmlp_1_1_xml_data_a42407bb4ec1896986bd0c8af4c02a7d6}{Data}} + \textcolor{stringliteral}{"{} "{}} + it.first + \textcolor{stringliteral}{"{}=\(\backslash\)"{}"{}} + it.second + \textcolor{stringliteral}{"{}\(\backslash\)"{}"{}};}
+\DoxyCodeLine{409                             }
+\DoxyCodeLine{410                             \textcolor{keywordflow}{if} (tagData.\mbox{\hyperlink{structxmlp_1_1_xml_data_ae3025a30f6558750ad3f999c276054d8}{DataType}} == \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484eabf671c69fbb1441f82bc51926ccc1c28}{inlineTag}})}
+\DoxyCodeLine{411                                 tagData.\mbox{\hyperlink{structxmlp_1_1_xml_data_a42407bb4ec1896986bd0c8af4c02a7d6}{Data}} += \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{412 }
+\DoxyCodeLine{413                             tagData.\mbox{\hyperlink{structxmlp_1_1_xml_data_a42407bb4ec1896986bd0c8af4c02a7d6}{Data}} += \textcolor{stringliteral}{"{}>"{}};}
+\DoxyCodeLine{414                         \}}
+\DoxyCodeLine{415 }
+\DoxyCodeLine{416                         \textcolor{comment}{// Set XmlData object tag name and map with params and values}}
+\DoxyCodeLine{417                         tagData.\mbox{\hyperlink{structxmlp_1_1_xml_data_a5438946e30e91223bec7f99dcaac4c6c}{ParamsAndValues}} = paramsAndValues;}
+\DoxyCodeLine{418                         tagData.\mbox{\hyperlink{structxmlp_1_1_xml_data_aa23093e0b838acbe1332ccdcaee4c21d}{TagName}} = tagName;}
+\DoxyCodeLine{419 }
+\DoxyCodeLine{420                         \textcolor{comment}{// Find path}}
+\DoxyCodeLine{421                         \textcolor{keywordflow}{if} (isPathSaving)}
+\DoxyCodeLine{422                         \{}
+\DoxyCodeLine{423                             std::string path = \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{424                             \textcolor{keywordflow}{if} (!tagStringsStackList.empty())}
+\DoxyCodeLine{425                             \{}
+\DoxyCodeLine{426                                 \textcolor{comment}{// Add all path elements except last}}
+\DoxyCodeLine{427                                 \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = tagStringsStackList.begin(); it != -\/-\/tagStringsStackList.end(); it++)}
+\DoxyCodeLine{428                                     path = path + *it + \textcolor{stringliteral}{"{}/"{}} ;}
+\DoxyCodeLine{429 }
+\DoxyCodeLine{430                                 \textcolor{comment}{// Add last path element if it is closing tag}}
+\DoxyCodeLine{431                                 \textcolor{keywordflow}{if} (tagData.\mbox{\hyperlink{structxmlp_1_1_xml_data_ae3025a30f6558750ad3f999c276054d8}{DataType}} == \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea01b6fc85b257f90ce94c01834c2e1753}{closingTag}} || tagData.\mbox{\hyperlink{structxmlp_1_1_xml_data_ae3025a30f6558750ad3f999c276054d8}{DataType}} == \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484eabf671c69fbb1441f82bc51926ccc1c28}{inlineTag}})}
+\DoxyCodeLine{432                                     path = path + tagStringsStackList.back() + \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{433                             \}}
+\DoxyCodeLine{434                             tagData.\mbox{\hyperlink{structxmlp_1_1_xml_data_a8c41362e8654ae88ad4ceb13d5f358c2}{Path}} = path;}
+\DoxyCodeLine{435                         \}}
+\DoxyCodeLine{436 }
+\DoxyCodeLine{437                         \textcolor{comment}{// Store data}}
+\DoxyCodeLine{438                         listWithAllData-\/>push\_back(tagData);}
+\DoxyCodeLine{439                     \}}
+\DoxyCodeLine{440                     tagString.clear();}
+\DoxyCodeLine{441                     \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{442                 \}}
+\DoxyCodeLine{443 }
+\DoxyCodeLine{444                 \textcolor{comment}{// Check if tag line opened}}
+\DoxyCodeLine{445                 \textcolor{keywordflow}{if} (isTagStringOpened)}
+\DoxyCodeLine{446                     tagString += *stringChar;}
+\DoxyCodeLine{447                 \textcolor{keywordflow}{else} betweenTagsString += *stringChar;}
+\DoxyCodeLine{448             \}}
+\DoxyCodeLine{449 }
+\DoxyCodeLine{450             \textcolor{comment}{// Skip logic if it is spec string}}
+\DoxyCodeLine{451             \textcolor{keywordflow}{if} (isSpecString)}
+\DoxyCodeLine{452                 \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{453 }
+\DoxyCodeLine{454             \textcolor{comment}{// Add new line symbol to comment}}
+\DoxyCodeLine{455             \textcolor{keywordflow}{if} (isComment)}
+\DoxyCodeLine{456             \{}
+\DoxyCodeLine{457                 commentString += \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{458                 \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{459             \}}
+\DoxyCodeLine{460 }
+\DoxyCodeLine{461             \textcolor{comment}{// Add non tag and non comment line to data list}}
+\DoxyCodeLine{462             \textcolor{keywordflow}{if} (!isTagStringOpened \&\& !isComment \&\& !\mbox{\hyperlink{namespacexmlp_aec53c412e39445ac9218333b90d60f25}{TrimString}}(betweenTagsString).\mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea8f928046bd5b1c7c32f687c8fb0e5e79}{empty}}())}
+\DoxyCodeLine{463             \{}
+\DoxyCodeLine{464                 \textcolor{keywordflow}{if} (tagStringsStackList.size() == 0)}
+\DoxyCodeLine{465                 \{}
+\DoxyCodeLine{466                     LOG(\textcolor{stringliteral}{"{}Text outside xml root on line number: "{}} + std::to\_string(lineNumber));}
+\DoxyCodeLine{467                     \textcolor{keywordflow}{if} (listWithAllData != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{468                         listWithAllData-\/>clear();}
+\DoxyCodeLine{469                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{470                 \}}
+\DoxyCodeLine{471 }
+\DoxyCodeLine{472                 \textcolor{comment}{// Add string between tag to XmlData list}}
+\DoxyCodeLine{473                 \textcolor{keywordflow}{if} (!\mbox{\hyperlink{namespacexmlp_aec53c412e39445ac9218333b90d60f25}{TrimString}}(betweenTagsString).\mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea8f928046bd5b1c7c32f687c8fb0e5e79}{empty}}() \&\& listWithAllData != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{474                 \{}
+\DoxyCodeLine{475                     \textcolor{comment}{// Create XmlData object}}
+\DoxyCodeLine{476                     \mbox{\hyperlink{structxmlp_1_1_xml_data}{XmlData}} textData;}
+\DoxyCodeLine{477                     textData.\mbox{\hyperlink{structxmlp_1_1_xml_data_a42407bb4ec1896986bd0c8af4c02a7d6}{Data}} = \mbox{\hyperlink{namespacexmlp_aec53c412e39445ac9218333b90d60f25}{TrimString}}(betweenTagsString);}
+\DoxyCodeLine{478                     textData.\mbox{\hyperlink{structxmlp_1_1_xml_data_ae3025a30f6558750ad3f999c276054d8}{DataType}} = \mbox{\hyperlink{namespacexmlp_a7dfdf690ac1440f989a5f1321770484ea175899900df9e9ae4c2f22b8b2066035}{text}};}
+\DoxyCodeLine{479 }
+\DoxyCodeLine{480                     \textcolor{comment}{// Find path}}
+\DoxyCodeLine{481                     \textcolor{keywordflow}{if} (isPathSaving)}
+\DoxyCodeLine{482                     \{}
+\DoxyCodeLine{483                         std::string path = \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{484                         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& it : tagStringsStackList)}
+\DoxyCodeLine{485                             path = path + it + \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{486                         textData.\mbox{\hyperlink{structxmlp_1_1_xml_data_a8c41362e8654ae88ad4ceb13d5f358c2}{Path}} = path;}
+\DoxyCodeLine{487                     \}}
+\DoxyCodeLine{488 }
+\DoxyCodeLine{489                     \textcolor{comment}{// Store data}}
+\DoxyCodeLine{490                     listWithAllData-\/>push\_back(textData);}
+\DoxyCodeLine{491                 \}}
+\DoxyCodeLine{492 }
+\DoxyCodeLine{493                 betweenTagsString.clear();}
+\DoxyCodeLine{494             \}}
+\DoxyCodeLine{495         \}}
+\DoxyCodeLine{496         }
+\DoxyCodeLine{497         \textcolor{comment}{// Check if it is some unclosed tags}}
+\DoxyCodeLine{498         \textcolor{keywordflow}{if} (!tagStringsStackList.empty())}
+\DoxyCodeLine{499         \{}
+\DoxyCodeLine{500             LOG(\textcolor{stringliteral}{"{}Dont closed tags"{}})}
+\DoxyCodeLine{501             \textcolor{keywordflow}{if} (listWithAllData != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{502                 listWithAllData-\/>clear();}
+\DoxyCodeLine{503             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{504         \}}
+\DoxyCodeLine{505         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{506             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{507     \}}
+\DoxyCodeLine{508 \}}
+
+\end{DoxyCode}
