@@ -25,16 +25,17 @@
 var NAVTREE =
 [
   [ "Xml parser", "index.html", [
-    [ "Usage examples", "index.html#autotoc_md0", [
-      [ "Checking data for validity and saving it", "index.html#autotoc_md1", null ],
-      [ "XML data processing", "index.html#autotoc_md2", null ],
-      [ "Insert XML data", "index.html#autotoc_md3", [
-        [ "Insert with checks", "index.html#autotoc_md4", null ],
-        [ "Insert without checks", "index.html#autotoc_md5", null ]
+    [ "Limitations", "index.html#autotoc_md0", null ],
+    [ "Usage examples", "index.html#autotoc_md1", [
+      [ "Checking data for validity and saving it", "index.html#autotoc_md2", null ],
+      [ "XML data processing", "index.html#autotoc_md3", null ],
+      [ "Insert XML data", "index.html#autotoc_md4", [
+        [ "Insert with checks", "index.html#autotoc_md5", null ],
+        [ "Insert without checks", "index.html#autotoc_md6", null ]
       ] ],
-      [ "Save xml data to file", "index.html#autotoc_md6", null ]
+      [ "Save xml data to file", "index.html#autotoc_md7", null ]
     ] ],
-    [ "Saving RAM", "index.html#autotoc_md7", null ],
+    [ "Saving RAM", "index.html#autotoc_md8", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [

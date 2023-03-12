@@ -87,13 +87,16 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
   <div class="headertitle"><div class="title">Xml parser </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><ol type="1">
+<div class="textblock"><p ><a href="https://mrognor.github.io/XML_Parser_Documentation/doc/html/index.html">Documentation available here</a></p>
+<h1><a class="anchor" id="autotoc_md0"></a>
+Limitations</h1>
+<ol type="1">
 <li>Tag with xml specification ignoring</li>
 <li>XML DTD not supporting</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md0"></a>
+<h1><a class="anchor" id="autotoc_md1"></a>
 Usage examples</h1>
-<h2><a class="anchor" id="autotoc_md1"></a>
+<h2><a class="anchor" id="autotoc_md2"></a>
 Checking data for validity and saving it</h2>
 <ol type="1">
 <li>This function will read the file, check the file data for validity, and if the data is valid, it will write them to the class object <div class="fragment"><div class="line">xmlp::XmlParser p;</div>
@@ -128,7 +131,7 @@ Checking data for validity and saving it</h2>
 <div class="line">    std::cout &lt;&lt; &quot;false&quot; &lt;&lt; std::endl;</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md2"></a>
+<h2><a class="anchor" id="autotoc_md3"></a>
 XML data processing</h2>
 <p >The simplest way to process data is a regular for loop </p><div class="fragment"><div class="line">xmlp::XmlParser p;</div>
 <div class="line"> </div>
@@ -144,16 +147,16 @@ XML data processing</h2>
 <div class="line">    // Data processing</div>
 <div class="line">}</div>
 </div><!-- fragment --><p> Each element of the list with xml data contains the following information:</p><ul>
-<li>DataType - The data type in the current element. For more information see XmlDataType <span style="color:red">ДОБАВЬ ЗДЕСЬ ССЫЛКУ</span>.</li>
+<li>DataType - The data type in the current element. For more information see <a href="https://mrognor.github.io/XML_Parser_Documentation/doc/html/namespacexmlp.html#a7dfdf690ac1440f989a5f1321770484e">XmlDataType</a></li>
 <li>Path - Data path. Format: /path/to/data</li>
 <li>TagName - Tag name, if the list item stores a tag, if the list item does not store a tag, then this variable is empty</li>
 <li>ParamsAndValues - Map, where the keys are tag parameters, and the values of the keys are the values of the corresponding tag parameters , if the list item stores a tag, if the list item does not store a tag, then this variable is empty</li>
 <li>Data - Raw xml data</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md3"></a>
+<h2><a class="anchor" id="autotoc_md4"></a>
 Insert XML data</h2>
 <p >There are two ways to insert data. The first way is to use library functions that check the insertion result for validity. The second way is to insert all the data through the source list, without using library functions.</p>
-<h3><a class="anchor" id="autotoc_md4"></a>
+<h3><a class="anchor" id="autotoc_md5"></a>
 Insert with checks</h3>
 <ol type="1">
 <li>This function inserts data before the iterator, checks the validity of the resulting list. If the data is not valid, the function will delete the inserted data and return false. <div class="fragment"><div class="line">for (auto it = p.GetData().begin(); it != p.GetData().end(); it++)</div>
@@ -179,15 +182,15 @@ Insert with checks</h3>
 <div class="line">p.InsertData(beg, end, {&quot;&lt;addingTag&gt;&quot;}, {&quot;&lt;/addingTag&gt;&quot;});</div>
 </div><!-- fragment --></li>
 </ol>
-<h3><a class="anchor" id="autotoc_md5"></a>
+<h3><a class="anchor" id="autotoc_md6"></a>
 Insert without checks</h3>
 <p >You can use standart std::list functions </p><div class="fragment"><div class="line">p.GetData().insert();</div>
 <div class="line">p.GetData().push_back((xmlp::XmlData)&quot;&lt;data&gt;&quot;);</div>
 <div class="line">p.GetData().push_front((xmlp::XmlData)&quot;&lt;/data&gt;&quot;);</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md6"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md7"></a>
 Save xml data to file</h2>
 <p >To save data to a file, use the function. Parametr is file name. Note that the structure of line breaks in the source file is not preserved </p><div class="fragment"><div class="line">p.WriteDataToFile(&quot;bin/1.xml&quot;);</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md8"></a>
 Saving RAM</h1>
 <p >By default, the validator saves the tag path, but if your file is very large and has a complex structure with long paths, saving the path may take up too much RAM. This is because the path stores the names of the previous tags. This is done for ease of operation, but saving the tag path can be disabled. Then the definition of the tag path will need to be written manually and tracked when moving through the list. </p>
 </div></div><!-- PageDoc -->

@@ -1,9 +1,10 @@
+\href{https://mrognor.github.io/XML_Parser_Documentation/doc/html/index.html}{\texttt{ Documentation available here}}\hypertarget{index_autotoc_md0}{}\doxysection{Limitations}\label{index_autotoc_md0}
 
 \begin{DoxyEnumerate}
 \item Tag with xml specification ignoring
 \item XML DTD not supporting
-\end{DoxyEnumerate}\hypertarget{index_autotoc_md0}{}\doxysection{Usage examples}\label{index_autotoc_md0}
-\hypertarget{index_autotoc_md1}{}\doxysubsection{Checking data for validity and saving it}\label{index_autotoc_md1}
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md1}{}\doxysection{Usage examples}\label{index_autotoc_md1}
+\hypertarget{index_autotoc_md2}{}\doxysubsection{Checking data for validity and saving it}\label{index_autotoc_md2}
 
 \begin{DoxyEnumerate}
 \item This function will read the file, check the file data for validity, and if the data is valid, it will write them to the class object 
@@ -53,7 +54,7 @@
 
 \end{DoxyCode}
 
-\end{DoxyEnumerate}\hypertarget{index_autotoc_md2}{}\doxysubsection{XML data processing}\label{index_autotoc_md2}
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md3}{}\doxysubsection{XML data processing}\label{index_autotoc_md3}
 The simplest way to process data is a regular for loop 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{xmlp::XmlParser p;}
@@ -73,13 +74,13 @@ The simplest way to process data is a regular for loop
 \end{DoxyCode}
  Each element of the list with xml data contains the following information\+:
 \begin{DoxyItemize}
-\item Data\+Type -\/ The data type in the current element. For more information see Xml\+Data\+Type ДОБАВЬ ЗДЕСЬ ССЫЛКУ.
+\item Data\+Type -\/ The data type in the current element. For more information see \href{https://mrognor.github.io/XML_Parser_Documentation/doc/html/namespacexmlp.html\#a7dfdf690ac1440f989a5f1321770484e}{\texttt{ Xml\+Data\+Type}}
 \item Path -\/ Data path. Format\+: /path/to/data
 \item Tag\+Name -\/ Tag name, if the list item stores a tag, if the list item does not store a tag, then this variable is empty
 \item Params\+And\+Values -\/ Map, where the keys are tag parameters, and the values of the keys are the values of the corresponding tag parameters , if the list item stores a tag, if the list item does not store a tag, then this variable is empty
 \item Data -\/ Raw xml data
-\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysubsection{Insert XML data}\label{index_autotoc_md3}
-There are two ways to insert data. The first way is to use library functions that check the insertion result for validity. The second way is to insert all the data through the source list, without using library functions.\hypertarget{index_autotoc_md4}{}\doxysubsubsection{Insert with checks}\label{index_autotoc_md4}
+\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysubsection{Insert XML data}\label{index_autotoc_md4}
+There are two ways to insert data. The first way is to use library functions that check the insertion result for validity. The second way is to insert all the data through the source list, without using library functions.\hypertarget{index_autotoc_md5}{}\doxysubsubsection{Insert with checks}\label{index_autotoc_md5}
 
 \begin{DoxyEnumerate}
 \item This function inserts data before the iterator, checks the validity of the resulting list. If the data is not valid, the function will delete the inserted data and return false. 
@@ -112,7 +113,7 @@ There are two ways to insert data. The first way is to use library functions tha
 
 \end{DoxyCode}
 
-\end{DoxyEnumerate}\hypertarget{index_autotoc_md5}{}\doxysubsubsection{Insert without checks}\label{index_autotoc_md5}
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md6}{}\doxysubsubsection{Insert without checks}\label{index_autotoc_md6}
 You can use standart std\+::list functions 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{p.GetData().insert();}
@@ -120,11 +121,11 @@ You can use standart std\+::list functions
 \DoxyCodeLine{p.GetData().push\_front((xmlp::XmlData)"{}</data>"{});}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md6}{}\doxysubsection{Save xml data to file}\label{index_autotoc_md6}
+\hypertarget{index_autotoc_md7}{}\doxysubsection{Save xml data to file}\label{index_autotoc_md7}
 To save data to a file, use the function. Parametr is file name. Note that the structure of line breaks in the source file is not preserved 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{p.WriteDataToFile("{}bin/1.xml"{});}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md7}{}\doxysection{Saving RAM}\label{index_autotoc_md7}
+\hypertarget{index_autotoc_md8}{}\doxysection{Saving RAM}\label{index_autotoc_md8}
 By default, the validator saves the tag path, but if your file is very large and has a complex structure with long paths, saving the path may take up too much RAM. This is because the path stores the names of the previous tags. This is done for ease of operation, but saving the tag path can be disabled. Then the definition of the tag path will need to be written manually and tracked when moving through the list. 
